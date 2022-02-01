@@ -1,0 +1,39 @@
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+    padding: 0.5em 0.8em;
+    border-radius: 4px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.5px;
+    transition: all 0.3s ease-in-out;
+    -webkit-font-smoothing: subpixel-antialiased;
+    &-primary {
+        @extend .btn;
+        color: $white;
+        background-color: $primary;
+        &:hover {
+            transform: scale(1.05);
+            background-color: $primary-light;
+            transition: all 0.3s ease-in-out;
+            -webkit-font-smoothing: subpixel-antialiased;
+        }
+        &:active,
+        &:focus {
+            background-color: $primary-light;
+        }
+    }
+    &-secondary {
+        @extend .btn;
+        color: $white;
+        background-color: $secondary;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $primary-light;
+            transition: background-color 0.3s;
+        }
+    }
+}
