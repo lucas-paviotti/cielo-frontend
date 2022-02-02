@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router';
 import { Hero } from '../components/Hero';
+import { GridMenuContainer } from '../components/GridMenuContainer'
 
 export default function Home() {
   const router = useRouter();
@@ -23,7 +24,9 @@ export default function Home() {
         <link rel="icon" href={`${router.basePath}/favicon/favicon.ico`} key="favicon" />
       </Head>
 
-      <Hero></Hero>
+      <Hero />
+
+      <GridMenuContainer />
 
       <p className='description'>
         Get started by editing{' '}

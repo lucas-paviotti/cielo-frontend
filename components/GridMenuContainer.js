@@ -1,5 +1,11 @@
 import React from 'react';
 
 export const GridMenuContainer = () => {
-  return <div></div>;
+  return (
+    <div className="container">
+      <div className="grid-menu-container">
+        
+      </div>
+    </div>
+  );
 };
