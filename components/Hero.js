@@ -1,5 +1,4 @@
 import React from 'react';
-import { ButtonLink } from './ButtonLink';
 import { ButtonGroupSocial } from './ButtonGroupSocial';
 
 export const Hero = () => {

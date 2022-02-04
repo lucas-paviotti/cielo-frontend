@@ -1,7 +1,11 @@
 .grid-menu-container {
     background-color: $primary;
-    height: 500px;
-    margin-top: -6.25rem;
     position: relative;
     z-index: 0;
+    margin-bottom: 7.813rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @media (min-width: $mobile-breakpoint) {
+        margin-top: -6.25rem;
+    }
 }

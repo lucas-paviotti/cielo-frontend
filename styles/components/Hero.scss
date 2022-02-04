@@ -9,7 +9,7 @@
     background-size: cover;
     position: relative;
     z-index: 0;
-    @media (min-width: 992px) {
+    @media (min-width: $mobile-breakpoint) {
         background-position: center -365px;
         background-size: auto 1465px;
     }

@@ -1,0 +1,92 @@
+.grid-menu-item {
+    min-height: 20.625rem;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    &.grid-col-span-2 {
+        grid-column: span 2;
+    }
+    &.grid-col-span-3 {
+        grid-column: span 3;
+    }
+    &.grid-col-span-4 {
+        grid-column: span 3;
+    }
+    &.text-align-left {
+        background: rgba(30, 53, 60, 0.6);
+        @media (min-width: $mobile-breakpoint) {
+            text-align: left;
+            > * {
+                align-self: flex-start;
+            }
+        }
+    }
+    &.text-align-right {
+        background: rgba(30, 53, 60, 0.6);
+        @media (min-width: $mobile-breakpoint) {
+            text-align: right;
+            > * {
+                align-self: flex-end;
+            }
+        }
+    }
+    &.background-align-left {
+        .grid-menu-item-background {
+            background-position: left center;
+        }
+    }
+    &.background-align-right {
+        .grid-menu-item-background {
+            background-position: right center;
+        }
+    }
+    &:hover {
+        .grid-menu-item-background {
+            transform: scale(1.2);
+        }
+    }
+    .grid-menu-item-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .5s;
+        background-color: $secondary;
+        background-position: center;
+        background-size: cover;
+        &::before{
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(180deg, rgba(30, 53, 60, 0) 0%, #1E353C 100%);
+        }
+    }
+    h2 {
+        font-size: 2.125rem;
+        line-height: 2.125rem;
+        margin: 0;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    h3 {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+        font-weight: 400;
+        margin-bottom: 0.2rem;
+    }
+    p {
+        font-weight: 300;
+        margin: 1rem 0 1.25rem 0;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+}
