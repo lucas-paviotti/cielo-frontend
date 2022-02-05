@@ -1,0 +1,8 @@
+.text-link {
+    transition: all 0.3s;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $primary-light;
+    }
+}

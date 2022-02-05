@@ -5,21 +5,31 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding: 2.5rem;
+    padding: 2rem 1rem;
     text-align: center;
     position: relative;
     overflow: hidden;
+    @media (min-width: $mobile-breakpoint) {
+        padding: 2.5rem;
+    }
+    &.grid-col-span-1 {
+        grid-column: span 1;
+    }
     &.grid-col-span-2 {
-        grid-column: span 2;
+        grid-column: span 1;
+        @media (min-width: $mobile-breakpoint) {
+            grid-column: span 2;
+        }
     }
     &.grid-col-span-3 {
-        grid-column: span 3;
-    }
-    &.grid-col-span-4 {
-        grid-column: span 3;
+        grid-column: span 1;
+        @media (min-width: $mobile-breakpoint) {
+            grid-column: span 3;
+        }
     }
     &.text-align-left {
         background: rgba(30, 53, 60, 0.6);
+        justify-content: center;
         @media (min-width: $mobile-breakpoint) {
             text-align: left;
             > * {
@@ -29,6 +39,7 @@
     }
     &.text-align-right {
         background: rgba(30, 53, 60, 0.6);
+        justify-content: center;
         @media (min-width: $mobile-breakpoint) {
             text-align: right;
             > * {
@@ -75,6 +86,7 @@
     h2 {
         font-size: 2.125rem;
         line-height: 2.125rem;
+        font-weight: 500;
         margin: 0;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     }
@@ -82,7 +94,8 @@
         font-size: 1.75rem;
         line-height: 2.125rem;
         font-weight: 400;
-        margin-bottom: 0.2rem;
+        letter-spacing: -1px;
+        margin-bottom: 0.5rem;
     }
     p {
         font-weight: 300;

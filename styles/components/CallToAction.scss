@@ -1,0 +1,44 @@
+.call-to-action {
+    color: $white;
+    text-align: center;
+    margin-bottom: 7.813rem;
+    background-image: url('/images/N31SF_09.JPG');
+    background-position: -150px center ;
+    background-size: cover;
+    padding-top: 9.375rem;
+    padding-bottom: 9.375rem;
+    position: relative;
+    z-index: 0;
+    @media (min-width: 1600px) {
+        background-position: center ;
+    }
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(46, 84, 94, 0.7);
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+        @media (min-width: $mobile-breakpoint) {
+            max-width: 430px;
+        }
+    }
+    h2 {
+        font-size: 3.125rem;
+        margin-bottom: 0.5em;
+        letter-spacing: -1px;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    p {
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+        margin-bottom: 2rem;
+        letter-spacing: -0.5px;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+}

@@ -3,13 +3,16 @@
     height: auto;
     display: flex;
     align-items: center;
+    text-align: center;
     color: $white;
     background-image: url('/images/IMG_3523-min.JPG');
-    background-position: center;
-    background-size: cover;
+    background-position: center -210px;
+    background-size: auto 890px;
     position: relative;
     z-index: 0;
     @media (min-width: $mobile-breakpoint) {
+        text-align: left;
+        margin-bottom: 0;
         background-position: center -365px;
         background-size: auto 1465px;
     }
@@ -34,32 +37,47 @@
     .container {
         position: relative;
         z-index: 1;
-        margin-top: 12.5rem;
-        margin-bottom: 15rem;
+        margin-top: 10.5rem;
+        margin-bottom: 10.5rem;
+        @media (min-width: $mobile-breakpoint) {
+            margin-top: 12.5rem;
+            margin-bottom: 15rem;
+        }
         @media (min-width: 1950px) {
             margin-top: 18.125rem;
             margin-bottom: 20.625rem;
         }
     }
     h1 {
+        font-size: 3rem;
         margin: 0;
-        max-width: 50%;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+        @media (min-width: $mobile-breakpoint) {
+            font-size: 5rem;
+            line-height: 5rem;
+            max-width: 50%;
+        }
     }
     p {
         font-size: 1.25rem;
         line-height: 1.75rem;
         font-weight: 300;
         letter-spacing: -0.5px;
-        max-width: 36%;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-        margin: 1.3rem 0 1.875rem;
+        margin: 1.2rem 0 2rem;
         b {
             font-weight: 500;
             margin-right: 2px;
         }
+        @media (min-width: $mobile-breakpoint) {
+            max-width: 36%;
+        }
     }
     .button-group-social {
-        max-width: 50%;
+        justify-content: center;
+        @media (min-width: $mobile-breakpoint) {
+            max-width: 50%;
+            justify-content: flex-start;
+        }
     }
 }
