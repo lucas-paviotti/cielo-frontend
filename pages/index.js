@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { Hero } from '../components/Hero';
 import { GridMenuContainer } from '../components/GridMenuContainer';
 import { CallToAction } from '../components/CallToAction';
+import { TitleWithLine } from '../components/TitleWithLine';
 
 export default function Home() {
   const router = useRouter();
@@ -30,6 +31,10 @@ export default function Home() {
       <GridMenuContainer />
 
       <CallToAction />
+
+      <div className="container">
+        <TitleWithLine title='Aeronaves a la venta' />
+      </div>
 
     </>
   )
