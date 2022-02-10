@@ -1,15 +1,85 @@
 .footer {
-    flex-shrink: 0;
-    display: flex;
-    flex: 1;
-    padding: 2rem 0;
-    border-top: 1px solid #eaeaea;
-    justify-content: center;
-    align-items: center;
-    a {
+    font-size: 0.938rem;
+    line-height: 1.3em;
+    color: $white;
+    padding: 3.8em 1.5em 0 1.5em;
+    background: linear-gradient(225.52deg, rgba(40, 64, 70, 0.982162) 0.45%, #142529 50.98%);
+    @media (min-width: $mobile-breakpoint) {
+        padding: 5.867em 0 0 0;
+    }
+    &__content {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        flex-grow: 1;
+        justify-content: flex-start;
+        padding: 3.667em 0;
+        border-top: 2px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        @media (min-width: $mobile-breakpoint) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+    &__logo-container {
+        margin-bottom: 3.667em;
+    }
+    &__link-list-container {
+        margin-bottom: 3.667em;
+        @media (min-width: $mobile-breakpoint) {
+            margin-bottom: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        @media (min-width: $mobile-breakpoint) {
+            flex: 0 1 46.2em;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+    &__link-list-header {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.667em;
+    }
+    &__link-list-item {
+        font-weight: 300;
+        margin-bottom: 0.667em;
+        @media (min-width: $mobile-breakpoint) {
+            max-width: 8.5em;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            color: #cfcfcf;
+            transition: color 0.3s;
+            &:hover,
+            &:active,
+            &:focus {
+                color: $primary-light;
+            }
+        }
+    }
+    &__copyright {
+        font-weight: 300;
+        text-align: center;
+        margin-top: 3.667em;
+        margin-bottom: 3.667em;
+        @media (min-width: $mobile-breakpoint) {
+            margin-top: 2.4em;
+            margin-bottom: 2.4em;
+        }
     }
 }

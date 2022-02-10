@@ -22,7 +22,7 @@ export const GridMenuContainer = () => {
             <h2>Cirrus Aircraft Argentina</h2>
           </TextLink>
         </GridMenuItem>
-        <GridMenuItem background="/images/grid/002.jpg" className='background-align-left'>
+        <GridMenuItem background="/images/grid/002.png" className='background-align-left'>
           <TextLink link='/aeronaves-en-venta'>
             <h2>Aeronaves en venta</h2>
           </TextLink>

@@ -1,5 +1,5 @@
 .title-container {
-    font-size: 3.125rem;
+    font-size: 2rem;
     hr {
         width: 3.38em;
         height: 4px;
@@ -9,5 +9,8 @@
     .title {
         margin-bottom: 0.6em;
         letter-spacing: -1px;
+    }
+    @media (min-width: $mobile-breakpoint) {
+        font-size: 3.125rem;
     }
 }
