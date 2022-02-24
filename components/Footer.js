@@ -6,7 +6,9 @@ export const Footer = () => {
             <div className="container footer__content">
                 <div className="footer__logo-container">
                     <span className='footer__logo'>
-                        <Image src="/images/logo/logo-white.svg" alt="Logo Cielo" width={146} height={32} />
+                        <a href="/">
+                            <Image src="/images/logo/logo-white.svg" alt="Logo Cielo" width={146} height={32} />
+                        </a>
                     </span>
                 </div>
                 <div className="footer__nav">
