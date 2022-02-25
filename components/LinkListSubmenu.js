@@ -15,7 +15,7 @@ export const LinkListSubmenu = ({items}) => {
             <span onClick={submenuOpen}>{name}</span>
             <ul className={`header__link-list-submenu ${submenu ? 'open' : 'closed'}`}>
                 {links.map((link, index) => {
-                    return <li className="footer__link-list-subitem"><a href={link.to}>{link.title}</a></li>;
+                    return <li className="header__link-list-subitem" key={index}><a href={link.to}>{link.title}</a></li>;
                 })}
             </ul>
         </li>

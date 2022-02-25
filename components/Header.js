@@ -13,6 +13,7 @@ export const Header = ({socials}) => {
         width: undefined,
         height: undefined,
     });
+    const [transparent, setTransparent] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -32,16 +33,32 @@ export const Header = ({socials}) => {
         }
     }, [size.width, menuOpen]);
 
+    useEffect(() => {
+        changeBackground();
+        window.addEventListener("scroll", changeBackground);
+    }, []);
+
     const menuToggleHandler = () => {
         setMenuOpen(!menuOpen);
     };
 
+    const changeBackground = () => {
+        if (window.scrollY == 0) {
+            setTransparent(true)
+        } else {
+            setTransparent(false)
+        }
+    }
+
     return (
-        <header className='header'>
+        <header className={`header ${transparent && !menuOpen ? 'transparent' : ''}`}>
             <div className='container header__container'>
                 <div className='header__logo'>
                     <a href="/">
-                        <Image src="/images/logo/logo-deep-blue.svg" alt="Logo Cielo" width={146} height={32} />
+                        {transparent && !menuOpen
+                            ? <Image src="/images/logo/logo-white.svg" alt="Logo Cielo" width={146} height={32} />
+                            : <Image src="/images/logo/logo-deep-blue.svg" alt="Logo Cielo" width={146} height={32} />
+                        }
                     </a>
                 </div>
                 <nav className={`header__nav ${menuOpen ? 'isMenu' : ''}`}>
