@@ -11,8 +11,9 @@ export const LinkListSubmenu = ({items}) => {
     const { name, links } = items;
 
     return (
-        <li className='header__link-list-item'>
-            <span onClick={submenuOpen}>{name}</span>
+        <li className='header__link-list-item' onClick={submenuOpen} onMouseEnter={submenuOpen} onMouseLeave={submenuOpen}>
+            <span>{name}</span>
+            <span className="header__link-list-item-space"></span>
             <ul className={`header__link-list-submenu ${submenu ? 'open' : 'closed'}`}>
                 {links.map((link, index) => {
                     return <li className="header__link-list-subitem" key={index}><a href={link.to}>{link.title}</a></li>;

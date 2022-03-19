@@ -13,7 +13,7 @@ export const Header = ({socials}) => {
         width: undefined,
         height: undefined,
     });
-    const [transparent, setTransparent] = useState(false);
+    const [transparent, setTransparent] = useState(true);
 
     useEffect(() => {
         const handleResize = () => {
@@ -73,8 +73,8 @@ export const Header = ({socials}) => {
                     </ul>
                     {socials &&
                         <div className="header__socials">
-                            {socials.facebook && <a href={socials.facebook} target="_blank" className='facebook'><FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon></a>}
                             {socials.instagram && <a href={socials.instagram} target="_blank" className='instagram'><FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon></a>}
+                            {socials.facebook && <a href={socials.facebook} target="_blank" className='facebook'><FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon></a>}
                             {socials.envelope && <a href={socials.envelope} target="_blank" className='envelope'><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon></a>}
                         </div>
                     }
