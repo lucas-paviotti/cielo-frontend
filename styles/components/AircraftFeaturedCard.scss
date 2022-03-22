@@ -1,0 +1,11 @@
+.aircraft-featured-card {
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 1.875rem;
+    &__slider {
+        .swiper-slide {
+            height: 266px;
+        }
+    }
+}
