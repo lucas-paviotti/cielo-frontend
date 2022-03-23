@@ -7,5 +7,51 @@
         .swiper-slide {
             height: 266px;
         }
+        .swiper-pagination {
+            .swiper-pagination-bullet {
+                background: $white;
+                opacity: 0.5;
+            }
+            .swiper-pagination-bullet-active {
+                background: $primary;
+                opacity: 1;
+            }
+        }
+    }
+    &__title {
+        h3 {
+            font-size: 1.5rem;
+            letter-spacing: -0.031rem;
+            font-weight: 400;
+            margin: 0;
+            padding: 2.1rem 2.813rem;
+            border-bottom: 1px solid #E4E4E4;
+            a {
+                display: inline-block;
+                transition: all 0.3s;
+                &:hover {
+                    opacity: 0.7;
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        &-item {
+            flex-basis: 100%;
+            text-align: center;
+            padding: 0.625rem 0.313rem;
+            border-right: 1px solid #E4E4E4;
+            &:last-child {
+                border-right: none;
+            }
+            > * {
+                display: block;
+                font-size: 0.938rem;
+                letter-spacing: -0.031rem;
+            }
+        }
     }
 }

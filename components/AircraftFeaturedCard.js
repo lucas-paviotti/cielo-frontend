@@ -25,7 +25,7 @@ export const AircraftFeaturedCard = () => {
       </Swiper>
       <div className="aircraft-featured-card__info">
         <div className="aircraft-featured-card__title">
-          <h3>Cirrus SR22T</h3>
+          <h3><a href="">Cirrus SR22T</a></h3>
         </div>
         <ul className="aircraft-featured-card__list">
           <li className="aircraft-featured-card__list-item">
