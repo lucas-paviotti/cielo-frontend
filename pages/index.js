@@ -6,9 +6,16 @@ import { GridMenuContainer } from '../components/GridMenuContainer';
 import { CallToAction } from '../components/CallToAction';
 import { TitleWithLine } from '../components/TitleWithLine';
 import { AircraftFeaturedCard } from '../components/AircraftFeaturedCard';
+import { AircraftSimpleContainer } from '../components/AircraftSimpleContainer';
+import { AircraftSimpleCard } from '../components/AircraftSimpleCard';
+import { PlaneData } from '../data/PlaneData';
 
 export default function Home() {
+
   const router = useRouter();
+
+  const planes = PlaneData.filter(plane => plane.frontpage == true);
+
   return (
     <>
       <Head>
@@ -38,9 +45,8 @@ export default function Home() {
       </div>
 
       <div className="container">
-        <AircraftFeaturedCard/>
+        { planes.filter(plane => plane.featured == true).map((item, index) => <AircraftFeaturedCard key={index} planeDetails={item} />) }
       </div>
-
 
     </>
   )

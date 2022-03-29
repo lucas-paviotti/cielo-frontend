@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
-export const AircraftFeaturedCard = () => {
+export const AircraftFeaturedCard = ({planeDetails}) => {
   return (
     <div className='aircraft-featured-card'>
       <Swiper
@@ -13,41 +13,29 @@ export const AircraftFeaturedCard = () => {
         pagination={{ clickable: true }}
         className="aircraft-featured-card__slider"
       >
-        <SwiperSlide>
-          <Image src="/images/N31SF_09.jpg" alt="image-alt-text" layout="fill" objectFit="cover" objectPosition="center center"/>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/images/N31SF_09.jpg" alt="image-alt-text" layout="fill" objectFit="cover" objectPosition="center center"/>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/images/N31SF_09.jpg" alt="image-alt-text" layout="fill" objectFit="cover" objectPosition="center center"/>
-        </SwiperSlide>
+        {planeDetails.images.map((item, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <a href="#">
+                <Image src={item.url} alt={planeDetails.name} layout="fill" objectFit="cover" objectPosition={item.position}/>
+              </a>
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
       <div className="aircraft-featured-card__info">
         <div className="aircraft-featured-card__title">
-          <h3><a href="">Cirrus SR22T</a></h3>
+          <h3><a href="#">{planeDetails.name}</a></h3>
         </div>
         <ul className="aircraft-featured-card__list">
-          <li className="aircraft-featured-card__list-item">
-            <span>315 HP</span>
-            <span>Caballos de fuerza</span>
-          </li>
-          <li className="aircraft-featured-card__list-item">
-            <span>213 KTAS</span>
-            <span>Velocidad Máxima de Crucero</span>
-          </li>
-          <li className="aircraft-featured-card__list-item">
-            <span>25.000 FT</span>
-            <span>Altitud Operativa Máxima</span>
-          </li>
-          <li className="aircraft-featured-card__list-item">
-            <span>1.021 NM</span>
-            <span>Rango Máx. (50% Potencia)</span>
-          </li>
-          <li className="aircraft-featured-card__list-item">
-            <span>1.246 LBS</span>
-            <span>Carga Útil</span>
-          </li>
+          {planeDetails.details.map((item, index) => {
+            return (
+              <li className="aircraft-featured-card__list-item" key={index}>
+                <span>{item.fieldName}</span>
+                <span>{item.data}</span>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </div>

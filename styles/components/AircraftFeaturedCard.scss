@@ -6,6 +6,10 @@
     &__slider {
         .swiper-slide {
             height: 266px;
+            cursor: pointer;
+            @media (min-width: $laptop-breakpoint) {
+                height: 366px;
+            }
         }
         .swiper-pagination {
             .swiper-pagination-bullet {
@@ -24,14 +28,21 @@
             letter-spacing: -0.031rem;
             font-weight: 400;
             margin: 0;
-            padding: 2.1rem 2.813rem;
+            padding: 1.8rem 1.5rem;
             border-bottom: 1px solid #E4E4E4;
+            text-align: center;
+            @media (min-width: $mobile-breakpoint) {
+                padding: 2.1rem 2.813rem;
+                text-align: left;
+            }
             a {
                 display: inline-block;
                 transition: all 0.3s;
                 &:hover {
                     opacity: 0.7;
-                    transform: translateX(5px);
+                    @media (min-width: $mobile-breakpoint) {
+                        transform: translateX(5px);
+                    }
                 }
             }
         }
@@ -39,11 +50,21 @@
     &__list {
         display: flex;
         align-items: center;
+        flex-direction: column;
+        @media (min-width: $mobile-breakpoint) {
+            flex-direction: row;
+        }
         &-item {
+            width: 100%;
             flex-basis: 100%;
             text-align: center;
             padding: 0.625rem 0.313rem;
-            border-right: 1px solid #E4E4E4;
+            border-bottom: 1px solid #E4E4E4;
+            @media (min-width: $mobile-breakpoint) {
+                width: auto;
+                border-bottom: none;
+                border-right: 1px solid #E4E4E4;
+            }
             &:last-child {
                 border-right: none;
             }
