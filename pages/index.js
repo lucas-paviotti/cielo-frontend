@@ -5,9 +5,8 @@ import { Hero } from '../components/Hero';
 import { GridMenuContainer } from '../components/GridMenuContainer';
 import { CallToAction } from '../components/CallToAction';
 import { TitleWithLine } from '../components/TitleWithLine';
-import { AircraftFeaturedCard } from '../components/AircraftFeaturedCard';
-import { AircraftSimpleContainer } from '../components/AircraftSimpleContainer';
-import { AircraftSimpleCard } from '../components/AircraftSimpleCard';
+import { AircraftCard } from '../components/AircraftCard';
+import { AircraftGridContainer } from '../components/AircraftGridContainer';
 import { PlaneData } from '../data/PlaneData';
 
 export default function Home() {
@@ -42,10 +41,10 @@ export default function Home() {
 
       <div className="container">
         <TitleWithLine title='Aeronaves a la venta' />
-      </div>
-
-      <div className="container">
-        { planes.filter(plane => plane.featured == true).map((item, index) => <AircraftFeaturedCard key={index} planeDetails={item} />) }
+        { planes.filter(plane => plane.featured == true).map((item, index) => <AircraftCard key={index} planeDetails={item} simple={false}/>) }
+        <AircraftGridContainer>
+          { planes.filter(plane => plane.featured == false).map((item, index) => <AircraftCard key={index} planeDetails={item} simple={true}/>) }
+        </AircraftGridContainer>
       </div>
 
     </>
