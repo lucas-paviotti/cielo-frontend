@@ -6,7 +6,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { LinkListSubmenu } from './LinkListSubmenu';
 import { HeaderLinks } from '../data/HeaderLinksData';
 
-export const Header = ({socials}) => {
+export const Header = ({socials, toggleModal}) => {
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [size, setSize] = useState({
@@ -75,7 +75,7 @@ export const Header = ({socials}) => {
                         <div className="header__socials">
                             {socials.instagram && <a href={socials.instagram} target="_blank" className='instagram'><FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon></a>}
                             {socials.facebook && <a href={socials.facebook} target="_blank" className='facebook'><FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon></a>}
-                            {socials.envelope && <a href={socials.envelope} target="_blank" className='envelope'><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon></a>}
+                            <FontAwesomeIcon icon={faEnvelope} onClick={() => toggleModal(true)}></FontAwesomeIcon>
                         </div>
                     }
                 </nav>

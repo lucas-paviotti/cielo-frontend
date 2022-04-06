@@ -9,7 +9,6 @@ export const AircraftCard = ({planeDetails, simple}) => {
 
   const renderDetailList = () => {
     if (simple == false) {
-      console.log(simple)
       return planeDetails.details.map((item, index) => {
         return (
           <li className="aircraft-card__list-item" key={index}>

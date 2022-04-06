@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const ModalContactForm = () => {
+export const ContactForm = () => {
   return <div></div>;
 };
