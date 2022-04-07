@@ -4,7 +4,7 @@ import { faWindowClose } from '@fortawesome/free-regular-svg-icons';
 
 export const Modal = ({title, openModal, toggleModal, children}) => {
   return (
-    <div className={`modal__overlay ${openModal ? 'active' : ''}`} onClick={() => toggleModal(false)}>
+    <>
       <div className={`modal ${openModal ? 'active' : ''}`}>
         <div className="modal__header">
           <h3>{title}</h3>
@@ -14,6 +14,7 @@ export const Modal = ({title, openModal, toggleModal, children}) => {
           {children}
         </div>
       </div>
-    </div>
+      <div className={`modal__overlay ${openModal ? 'active' : ''}`} onClick={() => toggleModal(false)}></div>
+    </>
   )
 }

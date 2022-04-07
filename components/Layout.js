@@ -19,7 +19,7 @@ export const Layout = ({ children }) => {
             <main className='main'>
                 { children }
             </main>
-            <Modal openModal={openModal} toggleModal={setOpenModal} />
+            <Modal title={'Contactanos'} openModal={openModal} toggleModal={setOpenModal} />
             <Footer></Footer>
         </>
     );

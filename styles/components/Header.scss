@@ -30,6 +30,9 @@
                     color: $white;
                 }
             }
+            .fa-envelope {
+                color: $white;
+            }
         }
         .header__link-list-submenu {
             @media (min-width: $mobile-breakpoint) {
@@ -160,6 +163,19 @@
             @media (min-width: $mobile-breakpoint) {
                 font-size: 1.1rem;
                 padding: 0 0.5rem;
+            }
+        }
+        .fa-envelope {
+            transition: color 0.3s;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin: 0 1rem;
+            &:hover {
+                color: $secondary;
+            }
+            @media (min-width: $mobile-breakpoint) {
+                font-size: 1.1rem;
+                margin: 0 0.5rem;
             }
         }
         @media (min-width: $mobile-breakpoint) {
