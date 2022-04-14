@@ -10,6 +10,8 @@
     letter-spacing: -0.5px;
     transition: all 0.3s ease-in-out;
     -webkit-font-smoothing: subpixel-antialiased;
+    border: none;
+    cursor: pointer;
     &-primary {
         @extend .btn;
         color: $white;
@@ -40,5 +42,8 @@
         width: auto;
         height: 0.9rem;
         margin-left: 0.8rem;
+    }
+    &.shadow-none {
+        box-shadow: none;
     }
 }

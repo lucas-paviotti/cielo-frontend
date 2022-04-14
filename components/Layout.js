@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Modal } from "./Modal";
+import { ContactForm } from "./ContactForm";
 
 export const Layout = ({ children }) => {
 
@@ -19,7 +20,9 @@ export const Layout = ({ children }) => {
             <main className='main'>
                 { children }
             </main>
-            <Modal title={'Contactanos'} openModal={openModal} toggleModal={setOpenModal} />
+            <Modal title={'Contactanos'} openModal={openModal} toggleModal={setOpenModal}>
+                <ContactForm />
+            </Modal>
             <Footer></Footer>
         </>
     );
