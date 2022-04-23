@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export const ContactForm = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
   return (
-    <form className="contact-form">
+    <form className="contact-form" ref={form} onSubmit={sendEmail}>
       <div className="contact-form__row">
         <label htmlFor="nombre" className="contact-form__label">Nombre</label>
         <input name="nombre" type="text" autoComplete="nombre" required id="nombre" className="contact-form__input"/>
       </div>
       <div className="contact-form__row">
-        <label htmlFor="telefono" className="contact-form__label">Telefono</label>
-        <input name="telefono" type="text" autoComplete="telefono" id="telefono" className="contact-form__input"/>
+        <label htmlFor="telefono" className="contact-form__label">Teléfono</label>
+        <input name="telefono" type="tel" autoComplete="telefono" id="telefono" className="contact-form__input"/>
       </div>
       <div className="contact-form__row">
         <label htmlFor="email" className="contact-form__label">E-mail</label>

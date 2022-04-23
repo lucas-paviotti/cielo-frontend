@@ -8,12 +8,11 @@ import { TitleWithLine } from '../components/TitleWithLine';
 import { AircraftCard } from '../components/AircraftCard';
 import { AircraftGridContainer } from '../components/AircraftGridContainer';
 import { PlaneData } from '../data/PlaneData';
+import axios from 'axios';
 
-export default function Home() {
-
+export default function Home({ aeronaves }) {
+  
   const router = useRouter();
-
-  const planes = PlaneData.filter(plane => plane.frontpage == true);
 
   return (
     <>
@@ -41,12 +40,21 @@ export default function Home() {
 
       <div className="container">
         <TitleWithLine title='Aeronaves a la venta' />
-        { planes.filter(plane => plane.featured == true).map((item, index) => <AircraftCard key={index} planeDetails={item} simple={false}/>) }
+        { aeronaves.data.filter(plane => plane.attributes.featured == true).map((plane) => <AircraftCard key={plane.id} planeInfo={plane.attributes} />) }
         <AircraftGridContainer>
-          { planes.filter(plane => plane.featured == false).map((item, index) => <AircraftCard key={index} planeDetails={item} simple={true}/>) }
+          { aeronaves.data.filter(plane => plane.attributes.featured == false).map((plane) => <AircraftCard key={plane.id} planeInfo={plane.attributes} />) }
         </AircraftGridContainer>
       </div>
 
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const aeronavesRes = await axios.get(`${process.env.REACT_APP_STRAPI_URL}/api/aeronaves?populate=details,images`);
+  return {
+    props: {
+      aeronaves: aeronavesRes.data
+    }
+  }
 }

@@ -5,15 +5,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
-export const AircraftCard = ({planeDetails, simple}) => {
-
+export const AircraftCard = ({planeInfo}) => {
   const renderDetailList = () => {
-    if (simple == false) {
-      return planeDetails.details.map((item, index) => {
+    if (planeInfo.featured == true) {
+      return planeInfo.details.slice(0, 5).map((item) => {
         return (
-          <li className="aircraft-card__list-item" key={index}>
-            <span>{item.fieldName}</span>
-            <span>{item.data}</span>
+          <li className="aircraft-card__list-item" key={item.id}>
+            <span>{item.value}</span>
+            <span>{item.label}</span>
           </li>
         )
       })
@@ -36,11 +35,12 @@ export const AircraftCard = ({planeDetails, simple}) => {
         pagination={{ clickable: true }}
         className="aircraft-card__slider"
       >
-        {planeDetails.images.map((item, index) => {
+        {planeInfo.images.data.map((item) => {
+          console.log(`${process.env.REACT_APP_STRAPI_URL}${item.attributes.url}`)
           return (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={item.id}>
               <a href="#">
-                <Image src={item.url} alt={planeDetails.name} layout="fill" objectFit="cover" objectPosition={item.position}/>
+                <Image src={`${process.env.REACT_APP_STRAPI_URL}${item.attributes.url}`} alt={planeInfo.name} layout="fill" objectFit="cover" objectPosition={"center"}/>
               </a>
             </SwiperSlide>
           )
@@ -48,7 +48,7 @@ export const AircraftCard = ({planeDetails, simple}) => {
       </Swiper>
       <div className="aircraft-card__info">
         <div className="aircraft-card__title">
-          <h3><a href="#">{planeDetails.name}</a></h3>
+          <h3><a href="#">{planeInfo.name}</a></h3>
         </div>
         <ul className="aircraft-card__list">
           {renderDetailList()}
