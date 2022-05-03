@@ -1,7 +1,10 @@
-import React from 'react';
+import React from "react";
 
-export const ButtonLink = ({link, target, text, children}) => {
+export const ButtonLink = ({ link, target, text, children }) => {
   return (
-    <a href={link} target={target} className='btn-primary'>{text}{children}</a>
+    <a href={link} target={target} className="btn-primary">
+      {text}
+      {children}
+    </a>
   );
 };

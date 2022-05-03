@@ -9,6 +9,7 @@ module.exports = {
     REACT_APP_STRAPI_URL: process.env.REACT_APP_STRAPI_URL,
   },
   images: {
+    loader: "default",
     domains: ['localhost'],
   },
 }

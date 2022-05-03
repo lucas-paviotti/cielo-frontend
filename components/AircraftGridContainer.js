@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-export const AircraftGridContainer = ({children}) => {
-  return <div className='aircraft-grid'>
-    {children}
-  </div>;
+export const AircraftGridContainer = ({ children }) => {
+  return <div className="aircraft-grid">{children}</div>;
 };

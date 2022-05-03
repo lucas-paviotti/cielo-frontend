@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-export const TitleWithLine = ({title}) => {
+export const TitleWithLine = ({ title }) => {
   return (
-    <div className='title-container'>
+    <div className="title-container">
       <hr />
-      <h2 className='title'>{title}</h2>
+      <h2 className="title">{title}</h2>
     </div>
   );
 };
