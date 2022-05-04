@@ -1,7 +1,10 @@
-import React from "react";
+import { useContext } from "react";
 import { ButtonGroupSocial } from "./ButtonGroupSocial";
+import { GlobalContext } from "../context/GlobalContext";
 
 export const Hero = () => {
+  const { socials } = useContext(GlobalContext);
+
   return (
     <section className="hero">
       <div className="container">
@@ -10,11 +13,7 @@ export const Hero = () => {
           Único centro de servicio autorizado de <b>Cirrus Aircraft</b> para
           Argentina, Bolivia, Paraguay y Uruguay
         </p>
-        <ButtonGroupSocial
-          link="https://www.google.com/"
-          facebook="https://www.facebook.com/CirrusAircraftArgentina/"
-          instagram="https://www.instagram.com/cirrusaircraftargentina/"
-        ></ButtonGroupSocial>
+        <ButtonGroupSocial />
       </div>
     </section>
   );

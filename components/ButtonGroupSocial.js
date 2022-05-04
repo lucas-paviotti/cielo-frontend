@@ -1,38 +1,32 @@
-import React from "react";
-import { ButtonLink } from "./ButtonLink";
+import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { GlobalContext } from "../context/GlobalContext";
 
-export const ButtonGroupSocial = ({ link, facebook, instagram, envelope }) => {
+export const ButtonGroupSocial = () => {
+  const { socials, setOpenModal } = useContext(GlobalContext);
+
   return (
     <div className="button-group-social">
-      {link && <ButtonLink link={link} target="_blank" text="Contactanos" />}
-      {facebook && (
+      <button className="btn-primary" onClick={() => setOpenModal(true)}>
+        Contactanos
+      </button>
+      {socials.facebook && (
         <a
-          href={facebook}
+          href={socials.facebook}
           target="_blank"
           className="btn-primary_social facebook"
         >
           <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
         </a>
       )}
-      {instagram && (
+      {socials.instagram && (
         <a
-          href={instagram}
+          href={socials.instagram}
           target="_blank"
           className="btn-primary_social instagram"
         >
           <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
-        </a>
-      )}
-      {envelope && (
-        <a
-          href={envelope}
-          target="_blank"
-          className="btn-primary_social envelope"
-        >
-          <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
         </a>
       )}
     </div>

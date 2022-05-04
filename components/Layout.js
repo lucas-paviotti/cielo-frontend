@@ -1,30 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Modal } from "./Modal";
 import { ContactForm } from "./ContactForm";
+import { GlobalProvider } from "../context/GlobalContext";
 
 export const Layout = ({ children }) => {
-  const [openModal, setOpenModal] = useState(false);
-
-  const socials = {
-    facebook: "https://www.facebook.com/CirrusAircraftArgentina/",
-    instagram: "https://www.instagram.com/cirrusaircraftargentina/",
-    envelope: "https://www.instagram.com/cirrusaircraftargentina/",
-  };
-
   return (
-    <>
-      <Header socials={socials} toggleModal={setOpenModal}></Header>
+    <GlobalProvider>
+      <Header />
       <main className="main">{children}</main>
-      <Modal
-        title={"Contactanos"}
-        openModal={openModal}
-        toggleModal={setOpenModal}
-      >
+      <Modal title={"Contactanos"}>
         <ContactForm />
       </Modal>
-      <Footer></Footer>
-    </>
+      <Footer />
+    </GlobalProvider>
   );
 };

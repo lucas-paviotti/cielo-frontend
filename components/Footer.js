@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import Image from "next/image";
+import { GlobalContext } from "../context/GlobalContext";
 
 export const Footer = () => {
+  const { socials } = useContext(GlobalContext);
+
   return (
     <footer className="footer">
       <div className="container footer__content">
@@ -55,21 +59,23 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="footer__link-list-container">
-            <span className="footer__link-list-header">Contacto y redes</span>
-            <ul className="footer__link-list">
-              <li className="footer__link-list-item">
-                <a href="https://www.instagram.com/cirrusaircraftargentina/">
-                  Seguinos en Instagram
-                </a>
-              </li>
-              <li className="footer__link-list-item">
-                <a href="https://www.facebook.com/CirrusAircraftArgentina/">
-                  Seguinos en Facebook
-                </a>
-              </li>
-            </ul>
-          </div>
+          {socials && (
+            <div className="footer__link-list-container">
+              <span className="footer__link-list-header">Contacto y redes</span>
+              <ul className="footer__link-list">
+                {socials.instagram && (
+                  <li className="footer__link-list-item">
+                    <a href={socials.instagram}>Seguinos en Instagram</a>
+                  </li>
+                )}
+                {socials.facebook && (
+                  <li className="footer__link-list-item">
+                    <a href={socials.facebook}>Seguinos en Facebook</a>
+                  </li>
+                )}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
       <div className="footer__copyright">

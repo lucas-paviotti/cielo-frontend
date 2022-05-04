@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { LinkListSubmenu } from "./LinkListSubmenu";
 import { HeaderLinks } from "../data/HeaderLinksData";
+import { GlobalContext } from "../context/GlobalContext";
 
-export const Header = ({ socials, toggleModal }) => {
+export const Header = () => {
+  const { socials, setOpenModal } = useContext(GlobalContext);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
     width: undefined,
@@ -110,7 +113,7 @@ export const Header = ({ socials, toggleModal }) => {
               )}
               <FontAwesomeIcon
                 icon={faEnvelope}
-                onClick={() => toggleModal(true)}
+                onClick={() => setOpenModal(true)}
               ></FontAwesomeIcon>
             </div>
           )}
