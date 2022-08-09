@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 
 export const LinkListSubmenu = ({ items }) => {
   const [submenu, setSubmenu] = useState(false);
@@ -24,7 +25,9 @@ export const LinkListSubmenu = ({ items }) => {
         {links.map((link, index) => {
           return (
             <li className="header__link-list-subitem" key={index}>
-              <a href={link.to}>{link.title}</a>
+              <Link href={link.to}>
+                <a>{link.title}</a>
+              </Link>
             </li>
           );
         })}

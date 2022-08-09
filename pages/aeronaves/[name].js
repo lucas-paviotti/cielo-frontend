@@ -1,15 +1,11 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { Hero } from "../components/Hero";
-import { GridMenuContainer } from "../components/GridMenuContainer";
-import { CallToAction } from "../components/CallToAction";
-import { TitleWithLine } from "../components/TitleWithLine";
-import { AircraftCard } from "../components/AircraftCard";
-import { AircraftGridContainer } from "../components/AircraftGridContainer";
-import { fetchAPI } from "../data/api";
 
-export default function Home({ aeronaves }) {
+export default function Home() {
   const router = useRouter();
+
+  console.log(router.query);
+
   return (
     <>
       <Head>
@@ -55,40 +51,7 @@ export default function Home({ aeronaves }) {
         />
       </Head>
 
-      <Hero />
-
-      <GridMenuContainer />
-
-      <CallToAction />
-
-      <div className="container">
-        <TitleWithLine title="Aeronaves a la venta" />
-        <AircraftGridContainer>
-          {aeronaves
-            .sort(
-              (a, b) =>
-                Number(b.attributes.featured) - Number(a.attributes.featured)
-            )
-            .map((plane) => (
-              <AircraftCard key={plane.id} id={plane.id} planeInfo={plane.attributes} />
-            ))}
-        </AircraftGridContainer>
-      </div>
+      <div></div>
     </>
   );
-}
-
-export async function getServerSideProps() {
-  const aeronavesRes = await fetchAPI("/aeronaves", {
-    populate: {
-      details: "*",
-      images: "*",
-    },
-  });
-
-  return {
-    props: {
-      aeronaves: aeronavesRes.data,
-    },
-  };
 }

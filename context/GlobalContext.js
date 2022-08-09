@@ -8,6 +8,13 @@ export function GlobalProvider({ children }) {
     instagram: "https://www.instagram.com/cirrusaircraftargentina/",
   };
 
+  /* fetchAPI("/aeronaves", {
+    populate: {
+      details: "*",
+      images: "*",
+    },
+  }); */
+
   const [openModal, setOpenModal] = useState(false);
 
   return (

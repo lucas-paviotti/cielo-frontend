@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Image from "next/image";
 import { GlobalContext } from "../context/GlobalContext";
+import Link from "next/link";
 
 export const Footer = () => {
   const { socials } = useContext(GlobalContext);
@@ -10,14 +11,16 @@ export const Footer = () => {
       <div className="container footer__content">
         <div className="footer__logo-container">
           <span className="footer__logo">
-            <a href="/">
-              <Image
-                src="/images/logo/logo-white.svg"
-                alt="Logo Cielo"
-                width={146}
-                height={32}
-              />
-            </a>
+            <Link href="/">
+              <a>
+                <Image
+                  src="/images/logo/logo-white.svg"
+                  alt="Logo Cielo"
+                  width={146}
+                  height={32}
+                />
+              </a>
+            </Link>
           </span>
         </div>
         <div className="footer__nav">
@@ -25,15 +28,17 @@ export const Footer = () => {
             <span className="footer__link-list-header">Información</span>
             <ul className="footer__link-list">
               <li className="footer__link-list-item">
-                <a href="/sobre-nosotros">Sobre nosotros</a>
+                <Link href="/sobre-nosotros">
+                  <a>Sobre nosotros</a>
+                </Link>
               </li>
               <li className="footer__link-list-item">
-                <a href="https://cirrusaircraft.com/">Cirrus Aircraft</a>
+                <a href="https://cirrusaircraft.com/" target="_blank">Cirrus Aircraft</a>
               </li>
               <li className="footer__link-list-item">
-                <a href="/mantenimiento-y-habilitaciones">
-                  Mantenimiento y habilitaciones
-                </a>
+                <Link href="/mantenimiento-y-habilitaciones">
+                  <a>Mantenimiento y habilitaciones</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -55,7 +60,9 @@ export const Footer = () => {
                 <a href="/aeronaves/cirrus-sr20">Cirrus SR20</a>
               </li>
               <li className="footer__link-list-item">
-                <a href="/aeronaves-usadas">Aeronaves usadas</a>
+                <Link href="/aeronaves-usadas">
+                  <a>Aeronaves usadas</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -65,12 +72,12 @@ export const Footer = () => {
               <ul className="footer__link-list">
                 {socials.instagram && (
                   <li className="footer__link-list-item">
-                    <a href={socials.instagram}>Seguinos en Instagram</a>
+                    <a href={socials.instagram} target="_blank">Seguinos en Instagram</a>
                   </li>
                 )}
                 {socials.facebook && (
                   <li className="footer__link-list-item">
-                    <a href={socials.facebook}>Seguinos en Facebook</a>
+                    <a href={socials.facebook} target="_blank">Seguinos en Facebook</a>
                   </li>
                 )}
               </ul>

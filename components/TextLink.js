@@ -1,9 +1,18 @@
 import React from "react";
+import Link from "next/link";
 
 export const TextLink = ({ link, target, children }) => {
   return (
-    <a href={link} target={target} className="text-link">
-      {children}
-    </a>
+    <>
+      {target === "_blank" ? (
+        <a href={link} target={target} className="text-link">
+          {children}
+        </a>
+      ) : (
+        <Link href={link}>
+          <a className="text-link">{children}</a>
+        </Link>
+      )}
+    </>
   );
 };

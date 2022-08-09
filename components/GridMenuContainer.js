@@ -48,9 +48,9 @@ export const GridMenuContainer = () => {
           </TextLink>
         </GridMenuItem>
         <GridMenuItem background="/images/grid/IMG_9715.jpg">
-          <TextLink>
-            <h2 onClick={() => setOpenModal(true)}>Contactanos</h2>
-          </TextLink>
+          <h2 onClick={() => setOpenModal(true)} className="text-link">
+            Contactanos
+          </h2>
         </GridMenuItem>
         <GridMenuItem
           background="/images/grid/IMG_2690-min.jpg"

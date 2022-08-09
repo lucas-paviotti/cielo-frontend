@@ -6,6 +6,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { LinkListSubmenu } from "./LinkListSubmenu";
 import { HeaderLinks } from "../data/HeaderLinksData";
 import { GlobalContext } from "../context/GlobalContext";
+import Link from "next/link";
 
 export const Header = () => {
   const { socials, setOpenModal } = useContext(GlobalContext);
@@ -58,23 +59,25 @@ export const Header = () => {
     >
       <div className="container header__container">
         <div className="header__logo">
-          <a href="/">
-            {transparent && !menuOpen ? (
-              <Image
-                src="/images/logo/logo-white.svg"
-                alt="Logo Cielo"
-                width={146}
-                height={32}
-              />
-            ) : (
-              <Image
-                src="/images/logo/logo-deep-blue.svg"
-                alt="Logo Cielo"
-                width={146}
-                height={32}
-              />
-            )}
-          </a>
+          <Link href="/">
+            <a>
+              {transparent && !menuOpen ? (
+                <Image
+                  src="/images/logo/logo-white.svg"
+                  alt="Logo Cielo"
+                  width={146}
+                  height={32}
+                />
+              ) : (
+                <Image
+                  src="/images/logo/logo-deep-blue.svg"
+                  alt="Logo Cielo"
+                  width={146}
+                  height={32}
+                />
+              )}
+            </a>
+          </Link>
         </div>
         <nav className={`header__nav ${menuOpen ? "isMenu" : ""}`}>
           <ul className="header__link-list">
@@ -84,12 +87,11 @@ export const Header = () => {
               } else {
                 return (
                   <li className="header__link-list-item" key={index}>
-                    <a
-                      href={headerLink.links[0].to}
-                      onClick={menuToggleHandler}
-                    >
-                      {headerLink.links[0].title}
-                    </a>
+                    <Link href={headerLink.links[0].to}>
+                      <a onClick={menuToggleHandler}>
+                        {headerLink.links[0].title}
+                      </a>
+                    </Link>
                   </li>
                 );
               }
