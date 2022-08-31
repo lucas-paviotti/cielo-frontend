@@ -4,11 +4,11 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { GlobalContext } from "../context/GlobalContext";
 
 export const ButtonGroupSocial = () => {
-  const { socials, setOpenModal } = useContext(GlobalContext);
+  const { socials, setIsOpen } = useContext(GlobalContext);
 
   return (
     <div className="button-group-social">
-      <button className="btn-primary" onClick={() => setOpenModal(true)}>
+      <button className="btn-primary" onClick={() => setIsOpen(true)}>
         Contactanos
       </button>
       {socials.facebook && (

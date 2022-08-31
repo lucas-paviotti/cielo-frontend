@@ -15,10 +15,10 @@ export function GlobalProvider({ children }) {
     },
   }); */
 
-  const [openModal, setOpenModal] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <GlobalContext.Provider value={{ socials, openModal, setOpenModal }}>
+    <GlobalContext.Provider value={{ socials, isOpen, setIsOpen }}>
       {children}
     </GlobalContext.Provider>
   );

@@ -7,7 +7,7 @@ import { TextLink } from "./TextLink";
 import { GlobalContext } from "../context/GlobalContext";
 
 export const GridMenuContainer = () => {
-  const { socials, setOpenModal } = useContext(GlobalContext);
+  const { socials, setIsOpen } = useContext(GlobalContext);
 
   return (
     <div className="container">
@@ -48,7 +48,7 @@ export const GridMenuContainer = () => {
           </TextLink>
         </GridMenuItem>
         <GridMenuItem background="/images/grid/IMG_9715.jpg">
-          <h2 onClick={() => setOpenModal(true)} className="text-link">
+          <h2 onClick={() => setIsOpen(true)} className="text-link">
             Contactanos
           </h2>
         </GridMenuItem>

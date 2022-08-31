@@ -9,7 +9,7 @@ import { GlobalContext } from "../context/GlobalContext";
 import Link from "next/link";
 
 export const Header = () => {
-  const { socials, setOpenModal } = useContext(GlobalContext);
+  const { socials, setIsOpen } = useContext(GlobalContext);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
@@ -115,7 +115,7 @@ export const Header = () => {
               )}
               <FontAwesomeIcon
                 icon={faEnvelope}
-                onClick={() => setOpenModal(true)}
+                onClick={() => setIsOpen(true)}
               ></FontAwesomeIcon>
             </div>
           )}
