@@ -7,45 +7,30 @@ import { LinkListSubmenu } from "./LinkListSubmenu";
 import { HeaderLinks } from "../data/HeaderLinksData";
 import { GlobalContext } from "../context/GlobalContext";
 import Link from "next/link";
+import useResponsive from "../Hooks/useResponsive";
 
 export const Header = () => {
   const { socials, setIsOpen } = useContext(GlobalContext);
-
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [size, setSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
+  const { screenType } = useResponsive();
   const [transparent, setTransparent] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (size.width > 768 && menuOpen) {
+    if (screenType === "DESKTOP") {
       setMenuOpen(false);
     }
-  }, [size.width, menuOpen]);
+  }, [screenType]);
 
   useEffect(() => {
-    changeBackground();
-    window.addEventListener("scroll", changeBackground);
+    window.addEventListener("scroll", changeBackgroundHandler);
+    return () => window.removeEventListener("scroll", changeBackgroundHandler);
   }, []);
 
   const menuToggleHandler = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const changeBackground = () => {
+  const changeBackgroundHandler = () => {
     if (window.scrollY == 0) {
       setTransparent(true);
     } else {
@@ -103,13 +88,19 @@ export const Header = () => {
                 <a
                   href={socials.instagram}
                   target="_blank"
+                  rel="noreferrer"
                   className="instagram"
                 >
                   <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
                 </a>
               )}
               {socials.facebook && (
-                <a href={socials.facebook} target="_blank" className="facebook">
+                <a
+                  href={socials.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="facebook"
+                >
                   <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
                 </a>
               )}

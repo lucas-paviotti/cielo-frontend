@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonLink } from "./ButtonLink";
+import { LinkButton } from "./LinkButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -17,13 +17,10 @@ export const CallToAction = () => {
           Si desea obtener mas información sobre la marca y sus aeronaves,
           visite su sitio web usando el siguiente enlace:
         </p>
-        <ButtonLink
-          link="https://cirrusaircraft.com/"
-          target="_blank"
-          text="Ir al sitio"
-        >
+        <LinkButton url="https://cirrusaircraft.com/">
+          <span>Ir al sitio</span>
           <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-        </ButtonLink>
+        </LinkButton>
       </div>
     </section>
   );

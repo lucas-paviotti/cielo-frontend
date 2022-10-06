@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { GridMenuItem } from "./GridMenuItem";
-import { ButtonLink } from "./ButtonLink";
+import { LinkButton } from "./LinkButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { TextLink } from "./TextLink";
@@ -24,9 +24,10 @@ export const GridMenuContainer = () => {
             obtenido alcances para realizar trabajos de una amplia gama de
             aviones, desde monomotores hasta modernos Jets ejecutivos.
           </p>
-          <ButtonLink link="gog" target="_blank" text="Seguir leyendo">
+          <LinkButton url="https://cirrusaircraft.com/">
+            <span>Seguir leyendo</span>
             <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-          </ButtonLink>
+          </LinkButton>
         </GridMenuItem>
         <GridMenuItem
           background="/images/grid/49f47f08-9fc2-4c27-8dc8-cb8f0e4a0b21-min.jpg"
@@ -56,10 +57,8 @@ export const GridMenuContainer = () => {
           background="/images/grid/IMG_2690-min.jpg"
           className="grid-col-span-2"
         >
-          <TextLink link="/mantenimiento-y-habilitaciones">
-            <h2 style={{ padding: "0 1.2rem" }}>
-              Mantenimiento y habilitaciones
-            </h2>
+          <TextLink link="/habilitaciones">
+            <h2 style={{ padding: "0 1.2rem" }}>Habilitaciones</h2>
           </TextLink>
         </GridMenuItem>
       </div>

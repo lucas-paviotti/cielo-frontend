@@ -16,9 +16,15 @@ export const HeaderLinks = [
         ]
     },
     {
-        name: 'Mantenimiento y Habilitaciones', 
+        name: 'Habilitaciones', 
         links:  [
-            { title: "Mantenimiento y Habilitaciones", to: "/mantenimiento-y-habilitaciones" }
+            { title: "Habilitaciones", to: "/habilitaciones" }
+        ]
+    },
+    {
+        name: 'Contactanos', 
+        links:  [
+            { title: "Contactanos", to: "/contactanos" }
         ]
     },
 ]

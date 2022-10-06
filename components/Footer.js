@@ -36,8 +36,8 @@ export const Footer = () => {
                 <a href="https://cirrusaircraft.com/" target="_blank">Cirrus Aircraft</a>
               </li>
               <li className="footer__link-list-item">
-                <Link href="/mantenimiento-y-habilitaciones">
-                  <a>Mantenimiento y habilitaciones</a>
+                <Link href="/habilitaciones">
+                  <a>Habilitaciones</a>
                 </Link>
               </li>
             </ul>

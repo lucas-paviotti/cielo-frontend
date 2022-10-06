@@ -16,6 +16,7 @@ export const ButtonGroupSocial = () => {
           href={socials.facebook}
           target="_blank"
           className="btn-primary_social facebook"
+          rel="noreferrer"
         >
           <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
         </a>
@@ -25,6 +26,7 @@ export const ButtonGroupSocial = () => {
           href={socials.instagram}
           target="_blank"
           className="btn-primary_social instagram"
+          rel="noreferrer"
         >
           <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
         </a>

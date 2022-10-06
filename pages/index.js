@@ -10,7 +10,10 @@ import { fetchAPI } from "../data/api";
 export default function Home({ aeronaves }) {
   return (
     <>
-      <HeadData title="Cielo S.A." description="Cielo S.A." />
+      <HeadData
+        title="Cielo S.A."
+        description="Único centro de servicio autorizado de Cirrus Aircraft para Argentina, Bolivia, Paraguay y Uruguay."
+      />
       <Hero />
       <GridMenuContainer />
       <CallToAction />
