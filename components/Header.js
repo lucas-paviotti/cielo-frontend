@@ -1,19 +1,21 @@
 import { useEffect, useState, useContext } from "react";
-import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { LinkListSubmenu } from "./LinkListSubmenu";
-import { HeaderLinks } from "../data/HeaderLinksData";
 import { GlobalContext } from "../context/GlobalContext";
-import Link from "next/link";
 import useResponsive from "../Hooks/useResponsive";
+import { HeaderLinks } from "../data/HeaderLinksData";
+import { LinkListSubmenu } from "./LinkListSubmenu";
+import { LogoIcon } from "./icon/LogoIcon";
 
 export const Header = () => {
-  const { socials, setIsOpen } = useContext(GlobalContext);
-  const { screenType } = useResponsive();
   const [transparent, setTransparent] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { socials, setIsOpen } = useContext(GlobalContext);
+  const { screenType } = useResponsive();
+  const { route } = useRouter();
 
   useEffect(() => {
     if (screenType === "DESKTOP") {
@@ -27,7 +29,9 @@ export const Header = () => {
   }, []);
 
   const menuToggleHandler = () => {
-    setMenuOpen(!menuOpen);
+    if (screenType === "MOBILE") {
+      setMenuOpen(!menuOpen);
+    }
   };
 
   const changeBackgroundHandler = () => {
@@ -40,27 +44,17 @@ export const Header = () => {
 
   return (
     <header
-      className={`header ${transparent && !menuOpen ? "transparent" : ""}`}
+      className={`header ${transparent && route === "/" ? "transparent" : ""}`}
     >
       <div className="container header__container">
         <div className="header__logo">
           <Link href="/">
-            <a>
-              {transparent && !menuOpen ? (
-                <Image
-                  src="/images/logo/logo-white.svg"
-                  alt="Logo Cielo"
-                  width={146}
-                  height={32}
-                />
-              ) : (
-                <Image
-                  src="/images/logo/logo-deep-blue.svg"
-                  alt="Logo Cielo"
-                  width={146}
-                  height={32}
-                />
-              )}
+            <a onClick={menuToggleHandler}>
+              <LogoIcon
+                width={146}
+                height={32}
+                color={transparent && route === "/" ? "#fff" : "#2f545e"}
+              />
             </a>
           </Link>
         </div>

@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "cielo-frontend",
   "private": true,
   "scripts": {
     "dev": "env-cmd -f .env.development next dev",
@@ -17,11 +17,15 @@
     "dotenv": "^16.0.0",
     "emailjs": "^3.8.0",
     "env-cmd": "^10.1.0",
-    "next": "^12.1.0",
+    "formik": "^2.2.9",
+    "framer-motion": "^7.5.3",
+    "next": "^12.3.1",
     "qs": "^6.10.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "swiper": "^8.0.7"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.4.0",
+    "swiper": "^8.0.7",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "7.32.0",
