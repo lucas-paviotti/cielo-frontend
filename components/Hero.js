@@ -1,10 +1,6 @@
-import { useContext } from "react";
 import { ButtonGroupSocial } from "./ButtonGroupSocial";
-import { GlobalContext } from "../context/GlobalContext";
 
 export const Hero = () => {
-  const { socials } = useContext(GlobalContext);
-
   return (
     <section className="hero">
       <div className="container">

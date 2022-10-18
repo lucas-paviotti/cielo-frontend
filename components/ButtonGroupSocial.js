@@ -4,16 +4,16 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { GlobalContext } from "../context/GlobalContext";
 
 export const ButtonGroupSocial = () => {
-  const { socials, setIsOpen } = useContext(GlobalContext);
+  const { SocialLinks, setIsOpen } = useContext(GlobalContext);
 
   return (
     <div className="button-group-social">
       <button className="btn-primary" onClick={() => setIsOpen(true)}>
         Contactanos
       </button>
-      {socials.facebook && (
+      {SocialLinks.facebook && (
         <a
-          href={socials.facebook}
+          href={SocialLinks.facebook}
           target="_blank"
           className="btn-primary_social facebook"
           rel="noreferrer"
@@ -21,9 +21,9 @@ export const ButtonGroupSocial = () => {
           <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
         </a>
       )}
-      {socials.instagram && (
+      {SocialLinks.instagram && (
         <a
-          href={socials.instagram}
+          href={SocialLinks.instagram}
           target="_blank"
           className="btn-primary_social instagram"
           rel="noreferrer"

@@ -7,10 +7,9 @@ import { TextLink } from "./TextLink";
 import { GlobalContext } from "../context/GlobalContext";
 
 export const GridMenuContainer = () => {
-  const { socials, setIsOpen } = useContext(GlobalContext);
+  const { SocialLinks, setIsOpen } = useContext(GlobalContext);
 
   return (
-    <div className="container">
       <div className="grid-menu-container">
         <GridMenuItem
           background="/images/grid/IMG_3418-min.jpg"
@@ -33,8 +32,8 @@ export const GridMenuContainer = () => {
           background="/images/grid/49f47f08-9fc2-4c27-8dc8-cb8f0e4a0b21-min.jpg"
           className="grid-col-span-2"
         >
-          {socials.instagram && (
-            <TextLink link={socials.instagram} target="_blank">
+          {SocialLinks.instagram && (
+            <TextLink link={SocialLinks.instagram} target="_blank">
               <h3>Seguinos en nuestro Instagram</h3>
               <h2>Cirrus Aircraft Argentina</h2>
             </TextLink>
@@ -62,6 +61,5 @@ export const GridMenuContainer = () => {
           </TextLink>
         </GridMenuItem>
       </div>
-    </div>
   );
 };

@@ -6,14 +6,13 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { GlobalContext } from "../context/GlobalContext";
 import useResponsive from "../Hooks/useResponsive";
-import { HeaderLinks } from "../data/HeaderLinksData";
 import { LinkListSubmenu } from "./LinkListSubmenu";
 import { LogoIcon } from "./icon/LogoIcon";
 
 export const Header = () => {
   const [transparent, setTransparent] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { socials, setIsOpen } = useContext(GlobalContext);
+  const { HeaderLinks, SocialLinks, setIsOpen } = useContext(GlobalContext);
   const { screenType } = useResponsive();
   const { route } = useRouter();
 
@@ -76,11 +75,11 @@ export const Header = () => {
               }
             })}
           </ul>
-          {socials && (
+          {SocialLinks && (
             <div className="header__socials">
-              {socials.instagram && (
+              {SocialLinks.instagram && (
                 <a
-                  href={socials.instagram}
+                  href={SocialLinks.instagram}
                   target="_blank"
                   rel="noreferrer"
                   className="instagram"
@@ -88,9 +87,9 @@ export const Header = () => {
                   <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
                 </a>
               )}
-              {socials.facebook && (
+              {SocialLinks.facebook && (
                 <a
-                  href={socials.facebook}
+                  href={SocialLinks.facebook}
                   target="_blank"
                   rel="noreferrer"
                   className="facebook"

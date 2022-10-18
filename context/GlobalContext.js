@@ -1,24 +1,15 @@
 import { useState, createContext } from "react";
+import { HeaderLinks, FooterLinks, SocialLinks } from "../data/LinksData";
 
 export const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
-  const socials = {
-    facebook: "https://www.facebook.com/CirrusAircraftArgentina/",
-    instagram: "https://www.instagram.com/cirrusaircraftargentina/",
-  };
-
-  /* fetchAPI("/aeronaves", {
-    populate: {
-      details: "*",
-      images: "*",
-    },
-  }); */
-
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <GlobalContext.Provider value={{ socials, isOpen, setIsOpen }}>
+    <GlobalContext.Provider
+      value={{ HeaderLinks, FooterLinks, SocialLinks, isOpen, setIsOpen }}
+    >
       {children}
     </GlobalContext.Provider>
   );

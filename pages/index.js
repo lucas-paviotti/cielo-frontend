@@ -15,7 +15,9 @@ export default function Home({ aeronaves }) {
         description="Único centro de servicio autorizado de Cirrus Aircraft para Argentina, Bolivia, Paraguay y Uruguay."
       />
       <Hero />
-      <GridMenuContainer />
+      <div className="container">
+        <GridMenuContainer />
+      </div>
       <CallToAction />
       <div className="container">
         <TitleWithLine title="Aeronaves a la venta" />

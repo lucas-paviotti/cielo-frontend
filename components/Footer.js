@@ -4,7 +4,7 @@ import { GlobalContext } from "../context/GlobalContext";
 import Link from "next/link";
 
 export const Footer = () => {
-  const { socials } = useContext(GlobalContext);
+  const { FooterLinks, SocialLinks } = useContext(GlobalContext);
 
   return (
     <footer className="footer">
@@ -33,7 +33,13 @@ export const Footer = () => {
                 </Link>
               </li>
               <li className="footer__link-list-item">
-                <a href="https://cirrusaircraft.com/" target="_blank">Cirrus Aircraft</a>
+                <a
+                  href="https://cirrusaircraft.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Cirrus Aircraft
+                </a>
               </li>
               <li className="footer__link-list-item">
                 <Link href="/habilitaciones">
@@ -48,16 +54,24 @@ export const Footer = () => {
             </span>
             <ul className="footer__link-list">
               <li className="footer__link-list-item">
-                <a href="/aeronaves/cirrus-sr22t">Cirrus SR22T</a>
+                <Link href="/aeronaves/cirrus-sr22t">
+                  <a>Cirrus SR22T</a>
+                </Link>
               </li>
               <li className="footer__link-list-item">
-                <a href="/aeronaves/cirrus-vision-jet">Cirrus Vision Jet</a>
+                <Link href="/aeronaves/cirrus-vision-jet">
+                  <a>Cirrus Vision Jet</a>
+                </Link>
               </li>
               <li className="footer__link-list-item">
-                <a href="/aeronaves/cirrus-sr22">Cirrus SR22</a>
+                <Link href="/aeronaves/cirrus-sr22">
+                  <a>Cirrus SR22</a>
+                </Link>
               </li>
               <li className="footer__link-list-item">
-                <a href="/aeronaves/cirrus-sr20">Cirrus SR20</a>
+                <Link href="/aeronaves/cirrus-sr20">
+                  <a>Cirrus SR20</a>
+                </Link>
               </li>
               <li className="footer__link-list-item">
                 <Link href="/aeronaves-usadas">
@@ -66,18 +80,30 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          {socials && (
+          {SocialLinks && (
             <div className="footer__link-list-container">
               <span className="footer__link-list-header">Contacto y redes</span>
               <ul className="footer__link-list">
-                {socials.instagram && (
+                {SocialLinks.instagram && (
                   <li className="footer__link-list-item">
-                    <a href={socials.instagram} target="_blank">Seguinos en Instagram</a>
+                    <a
+                      href={SocialLinks.instagram}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Seguinos en Instagram
+                    </a>
                   </li>
                 )}
-                {socials.facebook && (
+                {SocialLinks.facebook && (
                   <li className="footer__link-list-item">
-                    <a href={socials.facebook} target="_blank">Seguinos en Facebook</a>
+                    <a
+                      href={SocialLinks.facebook}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Seguinos en Facebook
+                    </a>
                   </li>
                 )}
               </ul>
