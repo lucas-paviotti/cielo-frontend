@@ -8,9 +8,9 @@ import { getStrapiMedia } from "../data/api";
 import Link from "next/link";
 
 export const AircraftCard = ({ id, planeInfo }) => {
-  const renderDetailList = () => {
+  const renderSpecsList = () => {
     if (planeInfo.featured == true) {
-      return planeInfo.details.slice(0, 5).map((item) => {
+      return planeInfo.specs.slice(0, 5).map((item) => {
         return (
           <li className="aircraft-card__list-item" key={item.id}>
             <span>{item.value}</span>
@@ -21,8 +21,8 @@ export const AircraftCard = ({ id, planeInfo }) => {
     } else {
       return (
         <li className="aircraft-card__list-item--more">
-          <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.name}`}>
-            <a>
+          <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+            <>
               <span>Ver más</span>
               <svg
                 width="11"
@@ -36,7 +36,7 @@ export const AircraftCard = ({ id, planeInfo }) => {
                   fill="#2E545E"
                 />
               </svg>
-            </a>
+            </>
           </Link>
         </li>
       );
@@ -55,10 +55,11 @@ export const AircraftCard = ({ id, planeInfo }) => {
             <SwiperSlide key={item.id}>
               <Image
                 src={getStrapiMedia(item)}
-                alt={item.alternativeText}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
+                alt=""
+                fill={true}
+                sizes="100vw, (min-width: 992px) 465px, (min-width: 1280px) 555px"
+                style={{ objectFit: "cover" }}
+                priority={planeInfo.featured ? true : false}
               />
             </SwiperSlide>
           );
@@ -67,12 +68,12 @@ export const AircraftCard = ({ id, planeInfo }) => {
       <div className="aircraft-card__info">
         <div className="aircraft-card__title">
           <h3>
-            <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.name}`}>
-              <a>{planeInfo.name}</a>
+            <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+              {planeInfo.model}
             </Link>
           </h3>
         </div>
-        <ul className="aircraft-card__list">{renderDetailList()}</ul>
+        <ul className="aircraft-card__list">{renderSpecsList()}</ul>
       </div>
     </div>
   );

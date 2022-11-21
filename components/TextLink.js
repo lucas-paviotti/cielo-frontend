@@ -9,8 +9,8 @@ export const TextLink = ({ link, target, children }) => {
           {children}
         </a>
       ) : (
-        <Link href={link}>
-          <a className="text-link">{children}</a>
+        <Link href={link} className="text-link">
+          {children}
         </Link>
       )}
     </>

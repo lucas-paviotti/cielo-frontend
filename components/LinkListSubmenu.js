@@ -25,9 +25,7 @@ export const LinkListSubmenu = ({ items }) => {
           {links.map((link, index) => {
             return (
               <li className="header__link-list-subitem" key={index}>
-                <Link href={link.to}>
-                  <a>{link.title}</a>
-                </Link>
+                <Link href={link.to}>{link.title}</Link>
               </li>
             );
           })}

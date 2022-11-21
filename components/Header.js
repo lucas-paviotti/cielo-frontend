@@ -47,14 +47,14 @@ export const Header = () => {
     >
       <div className="container header__container">
         <div className="header__logo">
-          <Link href="/">
-            <a onClick={menuToggleHandler}>
+          <Link href="/" onClick={menuToggleHandler}>
+            <>
               <LogoIcon
                 width={146}
                 height={32}
                 color={transparent && route === "/" ? "#fff" : "#2f545e"}
               />
-            </a>
+            </>
           </Link>
         </div>
         <nav className={`header__nav ${menuOpen ? "isMenu" : ""}`}>
@@ -65,10 +65,11 @@ export const Header = () => {
               } else {
                 return (
                   <li className="header__link-list-item" key={index}>
-                    <Link href={headerLink.links[0].to}>
-                      <a onClick={menuToggleHandler}>
-                        {headerLink.links[0].title}
-                      </a>
+                    <Link
+                      href={headerLink.links[0].to}
+                      onClick={menuToggleHandler}
+                    >
+                      {headerLink.links[0].title}
                     </Link>
                   </li>
                 );

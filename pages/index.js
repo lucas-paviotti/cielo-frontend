@@ -1,4 +1,4 @@
-import { HeadData } from "../components/Head";
+import Head from "next/head";
 import { Hero } from "../components/Hero";
 import { GridMenuContainer } from "../components/GridMenuContainer";
 import { CallToAction } from "../components/CallToAction";
@@ -10,10 +10,18 @@ import { fetchAPI } from "../data/api";
 export default function Home({ aeronaves }) {
   return (
     <>
-      <HeadData
-        title="Cielo S.A."
-        description="Único centro de servicio autorizado de Cirrus Aircraft para Argentina, Bolivia, Paraguay y Uruguay."
-      />
+      <Head>
+        <title>Cielo S.A.</title>
+        <meta
+          name="description"
+          content="Único centro de servicio autorizado de Cirrus Aircraft para Argentina, Bolivia, Paraguay y Uruguay."
+        />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1"
+          key="viewport"
+        />
+      </Head>
       <Hero />
       <div className="container">
         <GridMenuContainer />
@@ -43,7 +51,7 @@ export default function Home({ aeronaves }) {
 export async function getServerSideProps() {
   const aeronavesRes = await fetchAPI("/aeronaves", {
     populate: {
-      details: "*",
+      specs: "*",
       images: "*",
     },
   });

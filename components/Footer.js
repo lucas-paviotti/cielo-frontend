@@ -12,14 +12,14 @@ export const Footer = () => {
         <div className="footer__logo-container">
           <span className="footer__logo">
             <Link href="/">
-              <a>
+              <>
                 <Image
                   src="/images/logo/logo-white.svg"
                   alt="Logo Cielo"
                   width={146}
                   height={32}
                 />
-              </a>
+              </>
             </Link>
           </span>
         </div>
@@ -28,9 +28,7 @@ export const Footer = () => {
             <span className="footer__link-list-header">Información</span>
             <ul className="footer__link-list">
               <li className="footer__link-list-item">
-                <Link href="/sobre-nosotros">
-                  <a>Sobre nosotros</a>
-                </Link>
+                <Link href="/sobre-nosotros">Sobre nosotros</Link>
               </li>
               <li className="footer__link-list-item">
                 <a
@@ -42,9 +40,7 @@ export const Footer = () => {
                 </a>
               </li>
               <li className="footer__link-list-item">
-                <Link href="/habilitaciones">
-                  <a>Habilitaciones</a>
-                </Link>
+                <Link href="/habilitaciones">Habilitaciones</Link>
               </li>
             </ul>
           </div>
@@ -54,29 +50,21 @@ export const Footer = () => {
             </span>
             <ul className="footer__link-list">
               <li className="footer__link-list-item">
-                <Link href="/aeronaves/cirrus-sr22t">
-                  <a>Cirrus SR22T</a>
-                </Link>
+                <Link href="/aeronaves/cirrus-sr22t">Cirrus SR22T</Link>
               </li>
               <li className="footer__link-list-item">
                 <Link href="/aeronaves/cirrus-vision-jet">
-                  <a>Cirrus Vision Jet</a>
+                  Cirrus Vision Jet
                 </Link>
               </li>
               <li className="footer__link-list-item">
-                <Link href="/aeronaves/cirrus-sr22">
-                  <a>Cirrus SR22</a>
-                </Link>
+                <Link href="/aeronaves/cirrus-sr22">Cirrus SR22</Link>
               </li>
               <li className="footer__link-list-item">
-                <Link href="/aeronaves/cirrus-sr20">
-                  <a>Cirrus SR20</a>
-                </Link>
+                <Link href="/aeronaves/cirrus-sr20">Cirrus SR20</Link>
               </li>
               <li className="footer__link-list-item">
-                <Link href="/aeronaves-usadas">
-                  <a>Aeronaves usadas</a>
-                </Link>
+                <Link href="/aeronaves-usadas">Aeronaves usadas</Link>
               </li>
             </ul>
           </div>
