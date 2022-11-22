@@ -1,6 +1,7 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { ContactFormModal } from "./ContactFormModal";
+import { GalleryModal } from "./GalleryModal";
 import { GlobalProvider } from "../context/GlobalContext";
 
 export const Layout = ({ children }) => {
@@ -9,7 +10,7 @@ export const Layout = ({ children }) => {
       <Header />
       <main className="main">{children}</main>
       <ContactFormModal />
-      <ContactFormModal />
+      <GalleryModal />
       <Footer />
     </GlobalProvider>
   );

@@ -52,6 +52,9 @@
     margin-bottom: 1rem;
     border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
   }
+  &__body {
+    position: relative;
+  }
   &__title {
     margin-bottom: 0;
   }
@@ -77,5 +80,9 @@
         transform: scale(1.1);
       }
     }
+  }
+  &__gallery-image {
+    width: 100%;
+    height: auto;
   }
 }

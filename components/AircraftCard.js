@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -6,8 +6,11 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { getStrapiMedia } from "../data/api";
 import Link from "next/link";
+import { GlobalContext } from "../context/GlobalContext";
 
 export const AircraftCard = ({ id, planeInfo }) => {
+  const { setIsGalleryOpen, setCurrentImage } = useContext(GlobalContext);
+
   const renderSpecsList = () => {
     if (planeInfo.featured == true) {
       return planeInfo.specs.slice(0, 5).map((item) => {
@@ -54,12 +57,16 @@ export const AircraftCard = ({ id, planeInfo }) => {
           return (
             <SwiperSlide key={item.id}>
               <Image
-                src={getStrapiMedia(item)}
+                src={getStrapiMedia(item, planeInfo.featured ? null : "medium")}
                 alt=""
                 fill={true}
                 sizes="100vw, (min-width: 992px) 465px, (min-width: 1280px) 555px"
                 style={{ objectFit: "cover" }}
                 priority={planeInfo.featured ? true : false}
+                onClick={() => {
+                  setCurrentImage(item);
+                  setIsGalleryOpen(true);
+                }}
               />
             </SwiperSlide>
           );

@@ -28,8 +28,14 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
   return data;
 }
 
-export function getStrapiMedia(media) {
-  let url = media.data ? media.data.attributes : media.attributes.url;
+export function getStrapiMedia(media, size) {
+  if (!media) return;
+
+  let url = media.data
+    ? media.data.attributes
+    : size
+    ? media.attributes.formats[size].url
+    : media.attributes.url;
 
   const imageUrl = url.startsWith("/")
     ? `${process.env.REACT_APP_STRAPI_URL}${url}`
