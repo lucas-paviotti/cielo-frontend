@@ -1,5 +1,5 @@
 import { Modal } from "./Modal";
-import { ContactForm } from "./ContactForm";
+import { ContactForm } from "./Forms/ContactForm";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
