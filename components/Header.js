@@ -7,7 +7,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { GlobalContext } from "../context/GlobalContext";
 import useResponsive from "../Hooks/useResponsive";
 import { LinkListSubmenu } from "./LinkListSubmenu";
-import { LogoIcon } from "./icon/LogoIcon";
+import { LogoIcon } from "./Icons/LogoIcon";
 
 export const Header = () => {
   const [transparent, setTransparent] = useState(true);

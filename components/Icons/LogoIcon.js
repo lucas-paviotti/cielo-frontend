@@ -1,4 +1,9 @@
-export const LogoIcon = ({ width, height, color, title }) => {
+export const LogoIcon = ({
+  width = "304.1",
+  height = "67.44",
+  color = "#fff",
+  title = "Logo de Cielo S.A.",
+}) => {
   return (
     <svg
       width={width}
@@ -63,11 +68,4 @@ export const LogoIcon = ({ width, height, color, title }) => {
       </g>
     </svg>
   );
-};
-
-LogoIcon.defaultProps = {
-  width: "304.1",
-  height: "67.44",
-  color: "#fff",
-  title: "Logo de Cielo S.A.",
 };
