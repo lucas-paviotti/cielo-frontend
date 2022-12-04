@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { TextLink } from "./TextLink";
 import { GlobalContext } from "../context/GlobalContext";
+import useModal from "../hooks/useModal";
 
 export const GridMenuContainer = () => {
-  const { SocialLinks, setIsOpen } = useContext(GlobalContext);
+  const { SocialLinks } = useContext(GlobalContext);
+  const toggleModal = useModal((state) => state.toggleModal);
 
   return (
       <div className="grid-menu-container">
@@ -48,7 +50,7 @@ export const GridMenuContainer = () => {
           </TextLink>
         </GridMenuItem>
         <GridMenuItem background="/images/grid/IMG_9715.jpg">
-          <h2 onClick={() => setIsOpen(true)} className="text-link">
+          <h2 onClick={() => toggleModal("contact")} className="text-link">
             Contactanos
           </h2>
         </GridMenuItem>

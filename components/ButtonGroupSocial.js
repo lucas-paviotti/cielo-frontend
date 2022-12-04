@@ -2,13 +2,15 @@ import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { GlobalContext } from "../context/GlobalContext";
+import useModal from "../hooks/useModal";
 
 export const ButtonGroupSocial = () => {
-  const { SocialLinks, setIsOpen } = useContext(GlobalContext);
+  const { SocialLinks } = useContext(GlobalContext);
+  const toggleModal = useModal((state) => state.toggleModal);
 
   return (
     <div className="button-group-social">
-      <button className="btn-primary" onClick={() => setIsOpen(true)}>
+      <button className="btn-primary" onClick={() => toggleModal("contact")}>
         Contactanos
       </button>
       {SocialLinks.facebook && (

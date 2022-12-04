@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -6,11 +5,14 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { getStrapiMedia } from "../data/api";
 import Link from "next/link";
-import { GlobalContext } from "../context/GlobalContext";
 import { ArrowRight } from "./Icons/ArrowRight";
+import useModal from "../hooks/useModal";
 
 export const AircraftCard = ({ id, planeInfo }) => {
-  const { setIsGalleryOpen, setCurrentImage } = useContext(GlobalContext);
+  const { toggleModal, setData } = useModal((state) => ({
+    toggleModal: state.toggleModal,
+    setData: state.setData,
+  }));
 
   const renderSpecsList = () => {
     if (planeInfo.featured == true) {
@@ -54,8 +56,8 @@ export const AircraftCard = ({ id, planeInfo }) => {
                 style={{ objectFit: "cover" }}
                 priority={planeInfo.featured ? true : false}
                 onClick={() => {
-                  setCurrentImage(item);
-                  setIsGalleryOpen(true);
+                  setData("gallery", item);
+                  toggleModal("gallery");
                 }}
               />
             </SwiperSlide>

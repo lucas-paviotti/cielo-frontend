@@ -1,24 +1,25 @@
-import { Modal } from "./Modal";
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
 import Image from "next/image";
+import { Modal } from "./Modal";
 import { getStrapiMedia } from "../data/api";
 import { Close } from "./Icons/Close";
+import useModal from "../hooks/useModal";
 
 export const GalleryModal = () => {
-  const { isGalleryOpen, setIsGalleryOpen, currentImage } =
-    useContext(GlobalContext);
+  const { isOpen, toggleModal, currentImage } = useModal((state) => ({
+    isOpen: state.modals.gallery.isOpen,
+    currentImage: state.modals.gallery.data,
+    toggleModal: state.toggleModal,
+  }));
 
   return (
-    <Modal isOpen={isGalleryOpen} setIsOpen={setIsGalleryOpen}>
+    <Modal isOpen={isOpen} setIsOpen={() => toggleModal("gallery")}>
       <div className="modal__header">
         <h3 className="modal__title"></h3>
         <button
           className="modal__button modal__button--close"
-          onClick={() => setIsGalleryOpen(false)}
+          onClick={() => toggleModal("gallery")}
           type="button"
         >
-          =
           <Close />
         </button>
       </div>

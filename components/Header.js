@@ -8,13 +8,15 @@ import { GlobalContext } from "../context/GlobalContext";
 import useResponsive from "../Hooks/useResponsive";
 import { LinkListSubmenu } from "./LinkListSubmenu";
 import { LogoIcon } from "./Icons/LogoIcon";
+import useModal from "../hooks/useModal";
 
 export const Header = () => {
   const [transparent, setTransparent] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { HeaderLinks, SocialLinks, setIsOpen } = useContext(GlobalContext);
+  const { HeaderLinks, SocialLinks } = useContext(GlobalContext);
   const { screenType } = useResponsive();
   const { route } = useRouter();
+  const toggleModal = useModal((state) => state.toggleModal);
 
   useEffect(() => {
     if (screenType === "DESKTOP") {
@@ -100,7 +102,7 @@ export const Header = () => {
               )}
               <FontAwesomeIcon
                 icon={faEnvelope}
-                onClick={() => setIsOpen(true)}
+                onClick={() => toggleModal("contact")}
               ></FontAwesomeIcon>
             </div>
           )}
