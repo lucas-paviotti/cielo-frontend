@@ -6,13 +6,23 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { TextLink } from "./TextLink";
 import { GlobalContext } from "../context/GlobalContext";
 import useModal from "../hooks/useModal";
+import { useParallax } from "react-scroll-parallax";
+import useResponsive from "../Hooks/useResponsive";
 
 export const GridMenuContainer = () => {
   const { SocialLinks } = useContext(GlobalContext);
   const toggleModal = useModal((state) => state.toggleModal);
+  const { screenType } = useResponsive();
+  const { ref } = useParallax({
+    translateY: [
+      screenType === "DESKTOP" ? 2 : 0,
+      screenType === "DESKTOP" ? -18 : 0,
+    ],
+  });
 
   return (
-      <div className="grid-menu-container">
+    <div className="container grid-menu-container">
+      <div className="grid-menu" ref={ref}>
         <GridMenuItem
           background="/images/grid/IMG_3418-min.jpg"
           className="grid-col-span-2 text-align-left"
@@ -63,5 +73,6 @@ export const GridMenuContainer = () => {
           </TextLink>
         </GridMenuItem>
       </div>
+    </div>
   );
 };

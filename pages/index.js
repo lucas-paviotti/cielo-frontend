@@ -23,26 +23,26 @@ export default function Home({ aeronaves }) {
         />
       </Head>
       <Hero />
-      <div className="container">
+      <div className="wrapper">
         <GridMenuContainer />
-      </div>
-      <CallToAction />
-      <div className="container">
-        <TitleWithLine title="Aeronaves a la venta" />
-        <AircraftGridContainer>
-          {aeronaves
-            .sort(
-              (a, b) =>
-                Number(b.attributes.featured) - Number(a.attributes.featured)
-            )
-            .map((plane) => (
-              <AircraftCard
-                key={plane.id}
-                id={plane.id}
-                planeInfo={plane.attributes}
-              />
-            ))}
-        </AircraftGridContainer>
+        <CallToAction />
+        <div className="container">
+          <TitleWithLine title="Aeronaves a la venta" />
+          <AircraftGridContainer>
+            {aeronaves
+              .sort(
+                (a, b) =>
+                  Number(b.attributes.featured) - Number(a.attributes.featured)
+              )
+              .map((plane) => (
+                <AircraftCard
+                  key={plane.id}
+                  id={plane.id}
+                  planeInfo={plane.attributes}
+                />
+              ))}
+          </AircraftGridContainer>
+        </div>
       </div>
     </>
   );

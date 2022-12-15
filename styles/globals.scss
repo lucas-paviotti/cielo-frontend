@@ -115,6 +115,13 @@ p {
   }
 }
 
+.wrapper { 
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 5rem;
+}
+
 input,
 textarea,
 select {

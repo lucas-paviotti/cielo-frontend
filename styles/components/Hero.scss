@@ -1,83 +1,97 @@
 .hero {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: $white;
+  position: relative;
+  @media (min-width: $mobile-breakpoint) {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: $white;
-    background-image: url('/images/IMG_3523-min.JPG');
+    height: 100%;
+    background: linear-gradient(
+      194.54deg,
+      rgba(64, 64, 64, 0) 12.48%,
+      rgba(46, 84, 94, 0.7) 61.45%
+    );
+    z-index: 0;
+  }
+  &-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/IMG_3523-min.JPG");
     background-position: center -210px;
     background-size: auto 890px;
-    position: relative;
-    z-index: 0;
+    position: fixed;
+    z-index: -1;
     @media (min-width: $mobile-breakpoint) {
-        text-align: left;
-        margin-bottom: 0;
-        background-position: center -365px;
-        background-size: auto 1465px;
+      background-position: center -365px;
+      background-size: auto 1465px;
     }
     @media (min-width: 1950px) {
-        background-position: center -690px;
-        background-size: auto 2500px;
+      background-position: center -690px;
+      background-size: auto 2500px;
     }
     @media (min-width: 3300px) {
-        background-position: center -925px;
-        background-size: auto 3100px;
+      background-position: center -925px;
+      background-size: auto 3100px;
     }
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(194.54deg, rgba(64, 64, 64, 0) 12.48%, rgba(46, 84, 94, 0.7) 61.45%);
-        z-index: 0;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+    margin-top: 10.5rem;
+    margin-bottom: 10.5rem;
+    @media (min-width: $mobile-breakpoint) {
+      margin-top: 12.5rem;
+      margin-bottom: 15rem;
     }
-    .container {
-        position: relative;
-        z-index: 1;
-        margin-top: 10.5rem;
-        margin-bottom: 10.5rem;
-        @media (min-width: $mobile-breakpoint) {
-            margin-top: 12.5rem;
-            margin-bottom: 15rem;
-        }
-        @media (min-width: 1950px) {
-            margin-top: 18.125rem;
-            margin-bottom: 20.625rem;
-        }
+    @media (min-width: 1950px) {
+      margin-top: 18.125rem;
+      margin-bottom: 20.625rem;
     }
-    h1 {
-        font-size: 2.5rem;
-        margin: 0;
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-        @media (min-width: $mobile-breakpoint) {
-            font-size: 5rem;
-            line-height: 5rem;
-            max-width: 50%;
-        }
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    @media (min-width: $mobile-breakpoint) {
+      font-size: 5rem;
+      line-height: 5rem;
+      max-width: 50%;
     }
-    p {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        font-weight: 300;
-        letter-spacing: -0.5px;
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-        margin: 1.2rem 0 2rem;
-        b {
-            font-weight: 500;
-            margin-right: 2px;
-        }
-        @media (min-width: $mobile-breakpoint) {
-            max-width: 36%;
-        }
+  }
+  p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    margin: 1.2rem 0 2rem;
+    b {
+      font-weight: 500;
+      margin-right: 2px;
     }
-    .button-group-social {
-        justify-content: center;
-        @media (min-width: $mobile-breakpoint) {
-            max-width: 50%;
-            justify-content: flex-start;
-        }
+    @media (min-width: $mobile-breakpoint) {
+      max-width: 36%;
     }
+  }
+  .button-group-social {
+    justify-content: center;
+    @media (min-width: $mobile-breakpoint) {
+      max-width: 50%;
+      justify-content: flex-start;
+    }
+  }
+  .wave-container {
+    z-index: 1;
+  }
 }

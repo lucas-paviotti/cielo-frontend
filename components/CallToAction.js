@@ -2,10 +2,15 @@ import React from "react";
 import { LinkButton } from "./LinkButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { useParallax } from "react-scroll-parallax";
+import Image from "next/image";
 
 export const CallToAction = () => {
+  const { ref } = useParallax({ translateY: [-16, 0] });
+
   return (
     <section className="call-to-action">
+      <div className="call-to-action-bg" ref={ref} />
       <div className="container">
         <h2>Cirrus Aircraft</h2>
         <p>
