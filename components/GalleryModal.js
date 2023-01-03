@@ -25,13 +25,23 @@ export const GalleryModal = () => {
       </div>
       <div className="modal__body">
         {currentImage ? (
-          <Image
-            src={getStrapiMedia(currentImage)}
-            alt={currentImage.attributes.alternativeText}
-            width={currentImage.attributes.width}
-            height={currentImage.attributes.height}
-            className="modal__gallery-image"
-          />
+          typeof currentImage === "string" ? (
+            <Image
+              src={currentImage}
+              alt=""
+              width={2016}
+              height={1512}
+              className="modal__gallery-image"
+            />
+          ) : (
+            <Image
+              src={getStrapiMedia(currentImage)}
+              alt={currentImage.attributes.alternativeText}
+              width={currentImage.attributes.width}
+              height={currentImage.attributes.height}
+              className="modal__gallery-image"
+            />
+          )
         ) : null}
       </div>
     </Modal>

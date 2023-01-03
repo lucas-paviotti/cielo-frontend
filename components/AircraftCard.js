@@ -8,7 +8,7 @@ import Link from "next/link";
 import { ArrowRight } from "./Icons/ArrowRight";
 import useModal from "../hooks/useModal";
 
-export const AircraftCard = ({ id, planeInfo }) => {
+export const AircraftCard = ({ planeInfo }) => {
   const { toggleModal, setData } = useModal((state) => ({
     toggleModal: state.toggleModal,
     setData: state.setData,
@@ -37,6 +37,40 @@ export const AircraftCard = ({ id, planeInfo }) => {
       );
     }
   };
+
+  if (!planeInfo) {
+    return (
+      <div className="aircraft-card">
+        <Swiper
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+          className="aircraft-card__slider"
+        >
+          <SwiperSlide key="aeronaves-usadas">
+            <Image
+              src="/images/IMG_9715.jpg"
+              alt="Aeronaves usadas"
+              fill={true}
+              sizes="100vw, (min-width: 992px) 465px, (min-width: 1280px) 555px"
+              style={{ objectFit: "cover" }}
+              priority={false}
+              onClick={() => {
+                setData("gallery", "/images/IMG_9715.jpg");
+                toggleModal("gallery");
+              }}
+            />
+          </SwiperSlide>
+        </Swiper>
+        <div className="aircraft-card__info">
+          <div className="aircraft-card__title">
+            <h3>
+              <Link href="/aeronaves-usadas">Aeronaves Usadas</Link>
+            </h3>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`aircraft-card ${planeInfo.featured ? "featured" : ""}`}>

@@ -35,12 +35,9 @@ export default function Home({ aeronaves }) {
                   Number(b.attributes.featured) - Number(a.attributes.featured)
               )
               .map((plane) => (
-                <AircraftCard
-                  key={plane.id}
-                  id={plane.id}
-                  planeInfo={plane.attributes}
-                />
+                <AircraftCard key={plane.id} planeInfo={plane.attributes} />
               ))}
+            <AircraftCard />
           </AircraftGridContainer>
         </div>
       </div>
