@@ -35,7 +35,7 @@ export const GridMenuContainer = () => {
             obtenido alcances para realizar trabajos de una amplia gama de
             aviones, desde monomotores hasta modernos Jets ejecutivos.
           </p>
-          <LinkButton url="https://cirrusaircraft.com/">
+          <LinkButton url="/sobre-nosotros">
             <span>Seguir leyendo</span>
             <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
           </LinkButton>
@@ -55,7 +55,7 @@ export const GridMenuContainer = () => {
           background="/images/grid/002.png"
           className="background-align-left"
         >
-          <TextLink link="/aeronaves-en-venta">
+          <TextLink link="/aeronaves-usadas">
             <h2>Aeronaves en venta</h2>
           </TextLink>
         </GridMenuItem>

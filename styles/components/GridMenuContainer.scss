@@ -4,6 +4,7 @@
     z-index: 0;
     display: grid;
     grid-template-columns: 1fr;
+    gap: 0.625rem;
     @media (min-width: $mobile-breakpoint) {
         top: -8rem;
         grid-template-columns: repeat(4, 1fr);
