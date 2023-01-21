@@ -13,7 +13,6 @@ export const LinkListSubmenu = ({ items }) => {
   return (
     <li
       className="header__link-list-item"
-      onClick={submenuOpen}
       onMouseEnter={submenuOpen}
       onMouseLeave={submenuOpen}
     >

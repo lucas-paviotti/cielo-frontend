@@ -1,9 +1,8 @@
 import React from "react";
-import { LinkButton } from "./LinkButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { useParallax } from "react-scroll-parallax";
-import Image from "next/image";
+import Link from "next/link";
 
 export const CallToAction = () => {
   const { ref } = useParallax({ translateY: [-16, 0] });
@@ -22,10 +21,10 @@ export const CallToAction = () => {
           Si desea obtener mas información sobre la marca y sus aeronaves,
           visite su sitio web usando el siguiente enlace:
         </p>
-        <LinkButton url="https://cirrusaircraft.com/">
+        <Link href="https://cirrusaircraft.com/" className="btn-primary-light">
           <span>Ir al sitio</span>
           <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-        </LinkButton>
+        </Link>
       </div>
     </section>
   );

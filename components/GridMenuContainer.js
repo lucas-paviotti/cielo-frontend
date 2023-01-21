@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { GridMenuItem } from "./GridMenuItem";
-import { LinkButton } from "./LinkButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { TextLink } from "./TextLink";
 import { GlobalContext } from "../context/GlobalContext";
 import useModal from "../hooks/useModal";
 import { useParallax } from "react-scroll-parallax";
 import useResponsive from "../Hooks/useResponsive";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const GridMenuContainer = () => {
   const { SocialLinks } = useContext(GlobalContext);
@@ -19,6 +19,7 @@ export const GridMenuContainer = () => {
       screenType === "DESKTOP" ? -18 : 0,
     ],
   });
+  const router = useRouter();
 
   return (
     <div className="container grid-menu-container">
@@ -35,42 +36,43 @@ export const GridMenuContainer = () => {
             obtenido alcances para realizar trabajos de una amplia gama de
             aviones, desde monomotores hasta modernos Jets ejecutivos.
           </p>
-          <LinkButton url="/sobre-nosotros">
+          <Link href="/sobre-nosotros" className="btn-primary">
             <span>Seguir leyendo</span>
-            <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-          </LinkButton>
+            <FontAwesomeIcon icon={faChevronRight} />
+          </Link>
         </GridMenuItem>
-        <GridMenuItem
-          background="/images/grid/49f47f08-9fc2-4c27-8dc8-cb8f0e4a0b21-min.jpg"
-          className="grid-col-span-2"
-        >
-          {SocialLinks.instagram && (
-            <TextLink link={SocialLinks.instagram} target="_blank">
+        {SocialLinks.instagram ? (
+          <GridMenuItem
+            background="/images/grid/49f47f08-9fc2-4c27-8dc8-cb8f0e4a0b21-min.jpg"
+            className="grid-col-span-2"
+            url={SocialLinks.instagram}
+            target="_blank"
+          >
+            <div className="text-link">
               <h3>Seguinos en nuestro Instagram</h3>
               <h2>Cirrus Aircraft Argentina</h2>
-            </TextLink>
-          )}
-        </GridMenuItem>
+            </div>
+          </GridMenuItem>
+        ) : null}
         <GridMenuItem
           background="/images/grid/002.png"
           className="background-align-left"
+          url="/aeronaves-usadas"
         >
-          <TextLink link="/aeronaves-usadas">
-            <h2>Aeronaves en venta</h2>
-          </TextLink>
+          <h2 className="text-link">Aeronaves en venta</h2>
         </GridMenuItem>
-        <GridMenuItem background="/images/grid/IMG_9715.jpg">
-          <h2 onClick={() => toggleModal("contact")} className="text-link">
-            Contactanos
-          </h2>
+        <GridMenuItem
+          background="/images/grid/IMG_9715.jpg"
+          onClick={() => toggleModal("contact")}
+        >
+          <h2 className="text-link">Contactanos</h2>
         </GridMenuItem>
         <GridMenuItem
           background="/images/grid/IMG_2690-min.jpg"
           className="grid-col-span-2"
+          url="/habilitaciones"
         >
-          <TextLink link="/habilitaciones">
-            <h2 style={{ padding: "0 1.2rem" }}>Habilitaciones</h2>
-          </TextLink>
+          <h2 className="text-link">Habilitaciones</h2>
         </GridMenuItem>
       </div>
     </div>

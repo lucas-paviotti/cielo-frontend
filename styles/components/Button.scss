@@ -1,49 +1,83 @@
 .btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.125rem;
-    line-height: 1.125rem;
-    padding: 0.5em 0.8em;
-    border-radius: 0.25rem;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
-    letter-spacing: -0.5px;
-    transition: all 0.3s ease-in-out;
-    -webkit-font-smoothing: subpixel-antialiased;
-    border: none;
-    cursor: pointer;
-    &-primary {
-        @extend .btn;
-        color: $white;
-        background-color: $primary;
-        &:hover {
-            transform: scale(1.05);
-            background-color: $primary-light;
-            transition: all 0.3s ease-in-out;
-            -webkit-font-smoothing: subpixel-antialiased;
-        }
-        &:active,
-        &:focus {
-            background-color: $primary-light;
-        }
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  padding: 0.5em 0.8em;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease-in-out;
+  -webkit-font-smoothing: subpixel-antialiased;
+  border: none;
+  cursor: pointer;
+  &-primary {
+    @extend .btn;
+    color: $white;
+    background-color: $primary;
+    &:hover {
+      transform: scale(1.05);
+      background-color: $primary-light;
+      transition: all 0.3s ease-in-out;
+      -webkit-font-smoothing: subpixel-antialiased;
     }
-    &-secondary {
-        @extend .btn;
-        color: $white;
-        background-color: $secondary;
-        &:hover,
-        &:active,
-        &:focus {
-            background-color: $primary-light;
-            transition: background-color 0.3s;
-        }
+    &:active,
+    &:focus {
+      background-color: $primary-light;
     }
-    svg {
-        width: auto;
-        height: 0.9rem;
-        margin-left: 0.8rem;
+  }
+  &-secondary {
+    @extend .btn;
+    color: $white;
+    background-color: $secondary;
+    &:hover {
+      transform: scale(1.05);
+      background-color: $primary-light;
+      transition: all 0.3s ease-in-out;
+      -webkit-font-smoothing: subpixel-antialiased;
     }
-    &.shadow-none {
-        box-shadow: none;
+    &:active,
+    &:focus {
+      background-color: $primary-light;
     }
+  }
+  &-primary-light {
+    @extend .btn;
+    color: $white;
+    background-color: $primary-light;
+    &:hover {
+      transform: scale(1.05);
+      background-color: $primary;
+      transition: all 0.3s ease-in-out;
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+    &:active,
+    &:focus {
+      background-color: $primary;
+    }
+  }
+  &-dark {
+    @extend .btn;
+    color: $white;
+    background-color: $dark-blue;
+    &:hover {
+      transform: scale(1.05);
+      background-color: $dark;
+      transition: all 0.3s ease-in-out;
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+    &:active,
+    &:focus {
+      background-color: $dark;
+    }
+  }
+  svg {
+    width: auto;
+    height: 0.9rem;
+    margin-left: 0.8rem;
+  }
+  &.shadow-none {
+    box-shadow: none;
+  }
 }

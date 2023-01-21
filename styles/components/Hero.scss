@@ -20,9 +20,16 @@
     background: linear-gradient(
       194.54deg,
       rgba(64, 64, 64, 0) 12.48%,
-      rgba(46, 84, 94, 0.6) 61.45%
+      rgba(46, 84, 94, 0.6) 41.45%
     );
     z-index: 0;
+    @media (min-width: $mobile-breakpoint) {
+      background: linear-gradient(
+      194.54deg,
+      rgba(64, 64, 64, 0) 12.48%,
+      rgba(46, 84, 94, 0.6) 61.45%
+    );
+    }
   }
   &-bg {
     width: 100%;

@@ -1,117 +1,125 @@
 .grid-menu-item {
-    min-height: 20.625rem;
-    color: $white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 2rem 1rem;
-    margin-bottom: 0.938rem;
-    border-radius: 0.6rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.1);
+  min-height: 20.625rem;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem 1.25rem;
+  margin-bottom: 0.938rem;
+  border-radius: 0.6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
+  &:hover {
+    .grid-menu-item-background {
+      transform: scale(1.2);
+    }
+    .text-link {
+      color: $primary-light;
+      transform: translateY(-3px);
+    }
+  }
+  @media (min-width: $mobile-breakpoint) {
+    padding: 2.5rem;
+    margin-bottom: 0;
+    box-shadow: none;
+  }
+  &.grid-col-span-1 {
+    grid-column: span 1;
+  }
+  &.grid-col-span-2 {
+    grid-column: span 1;
     @media (min-width: $mobile-breakpoint) {
-        padding: 2.5rem;
-        margin-bottom: 0;
-        box-shadow: none;
+      grid-column: span 2;
     }
-    &.grid-col-span-1 {
-        grid-column: span 1;
+  }
+  &.grid-col-span-3 {
+    grid-column: span 1;
+    @media (min-width: $mobile-breakpoint) {
+      grid-column: span 3;
     }
-    &.grid-col-span-2 {
-        grid-column: span 1;
-        @media (min-width: $mobile-breakpoint) {
-            grid-column: span 2;
-        }
+  }
+  &.text-align-left {
+    background: rgba(30, 53, 60, 0.6);
+    justify-content: center;
+    @media (min-width: $mobile-breakpoint) {
+      text-align: left;
+      > * {
+        align-self: flex-start;
+      }
     }
-    &.grid-col-span-3 {
-        grid-column: span 1;
-        @media (min-width: $mobile-breakpoint) {
-            grid-column: span 3;
-        }
+  }
+  &.text-align-right {
+    background: rgba(30, 53, 60, 0.6);
+    justify-content: center;
+    @media (min-width: $mobile-breakpoint) {
+      text-align: right;
+      > * {
+        align-self: flex-end;
+      }
     }
-    &.text-align-left {
-        background: rgba(30, 53, 60, 0.6);
-        justify-content: center;
-        @media (min-width: $mobile-breakpoint) {
-            text-align: left;
-            > * {
-                align-self: flex-start;
-            }
-        }
+  }
+  &.background-align-left {
+    .grid-menu-item-background {
+      background-position: left center;
     }
-    &.text-align-right {
-        background: rgba(30, 53, 60, 0.6);
-        justify-content: center;
-        @media (min-width: $mobile-breakpoint) {
-            text-align: right;
-            > * {
-                align-self: flex-end;
-            }
-        }
+  }
+  &.background-align-right {
+    .grid-menu-item-background {
+      background-position: right center;
     }
-    &.background-align-left {
-        .grid-menu-item-background {
-            background-position: left center;
-        }
+  }
+  &-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s;
+    background-color: $secondary;
+    background-position: center;
+    background-size: cover;
+    &::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(30, 53, 60, 0) 0%, #1e353c 100%);
     }
-    &.background-align-right {
-        .grid-menu-item-background {
-            background-position: right center;
-        }
+  }
+  h2 {
+    line-height: 2.125rem;
+    font-weight: 500;
+    margin: 0;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    @media (min-width: $mobile-breakpoint) {
+      font-size: 2.125rem;
     }
-    &:hover {
-        .grid-menu-item-background {
-            transform: scale(1.2);
-        }
+  }
+  h3 {
+    font-size: 1.2rem;
+    line-height: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+    @media (min-width: $mobile-breakpoint) {
+      font-size: 1.75rem;
+      line-height: 2.125rem;
+      letter-spacing: -1px;
     }
-    &-background {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: all .5s;
-        background-color: $secondary;
-        background-position: center;
-        background-size: cover;
-        &::before{
-            content: "";
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: linear-gradient(180deg, rgba(30, 53, 60, 0) 0%, #1E353C 100%);
-        }
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 1.5rem 1rem 1.75rem 1rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    @media (min-width: $mobile-breakpoint) {
+      margin: 1rem 0 1.25rem 0;
     }
-    h2 {
-        line-height: 2.125rem;
-        font-weight: 500;
-        margin: 0;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-        @media (min-width: $mobile-breakpoint) {
-            font-size: 2.125rem;
-        }
-    }
-    h3 {
-        font-size: 1.2rem;
-        line-height: 1rem;
-        font-weight: 400;
-        letter-spacing: -0.5px;
-        margin-bottom: 0.5rem;
-        @media (min-width: $mobile-breakpoint) {
-            font-size: 1.75rem;
-            line-height: 2.125rem;
-            letter-spacing: -1px;
-        }
-    }
-    p {
-        font-weight: 300;
-        margin: 1rem 0 1.25rem 0;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    }
+  }
 }
