@@ -87,7 +87,7 @@ export const Header = () => {
                   rel="noreferrer"
                   className="instagram"
                 >
-                  <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faInstagram} />
                 </a>
               )}
               {SocialLinks.facebook && (
@@ -97,13 +97,13 @@ export const Header = () => {
                   rel="noreferrer"
                   className="facebook"
                 >
-                  <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faFacebookF} />
                 </a>
               )}
               <FontAwesomeIcon
                 icon={faEnvelope}
                 onClick={() => toggleModal("contact")}
-              ></FontAwesomeIcon>
+              />
             </div>
           )}
         </nav>

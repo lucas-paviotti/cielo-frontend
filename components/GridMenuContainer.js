@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import { GridMenuItem } from "./GridMenuItem";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { GlobalContext } from "../context/GlobalContext";
 import useModal from "../hooks/useModal";
 import { useParallax } from "react-scroll-parallax";
 import useResponsive from "../Hooks/useResponsive";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { ArrowRight } from "./Icons/ArrowRight";
 
 export const GridMenuContainer = () => {
   const { SocialLinks } = useContext(GlobalContext);
@@ -38,7 +37,12 @@ export const GridMenuContainer = () => {
           </p>
           <Link href="/sobre-nosotros" className="btn-primary">
             <span>Seguir leyendo</span>
-            <FontAwesomeIcon icon={faChevronRight} />
+            <ArrowRight
+              width="0.85rem"
+              height="0.75rem"
+              color="white"
+              style={{ marginLeft: "0.5rem" }}
+            />
           </Link>
         </GridMenuItem>
         {SocialLinks.instagram ? (

@@ -1,8 +1,7 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { useParallax } from "react-scroll-parallax";
 import Link from "next/link";
+import { ArrowRight } from "./Icons/ArrowRight";
 
 export const CallToAction = () => {
   const { ref } = useParallax({ translateY: [-16, 0] });
@@ -23,7 +22,12 @@ export const CallToAction = () => {
         </p>
         <Link href="https://cirrusaircraft.com/" className="btn-primary-light">
           <span>Ir al sitio</span>
-          <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
+          <ArrowRight
+            width="0.85rem"
+            height="0.75rem"
+            color="white"
+            style={{ marginLeft: "0.5rem" }}
+          />
         </Link>
       </div>
     </section>

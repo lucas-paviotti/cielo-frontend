@@ -16,24 +16,38 @@ export const AircraftCard = ({ planeInfo }) => {
 
   const renderSpecsList = () => {
     if (planeInfo.featured == true) {
-      return planeInfo.specs.slice(0, 5).map((item) => {
-        return (
-          <li className="aircraft-card__list-item" key={item.id}>
-            <span>{item.value}</span>
-            <span>{item.label}</span>
-          </li>
-        );
-      });
+      return (
+        <>
+          <ul className="aircraft-card__list">
+            {planeInfo.specs.slice(0, 5).map((item) => {
+              return (
+                <li className="aircraft-card__list-item" key={item.id}>
+                  <span>{item.value}</span>
+                  <span>{item.label}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="aircraft-card__list-item--more">
+            <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+              <>
+                <span>Ver más</span>
+                <ArrowRight />
+              </>
+            </Link>
+          </div>
+        </>
+      );
     } else {
       return (
-        <li className="aircraft-card__list-item--more">
+        <div className="aircraft-card__list-item--more">
           <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
             <>
               <span>Ver más</span>
               <ArrowRight />
             </>
           </Link>
-        </li>
+        </div>
       );
     }
   };
@@ -68,6 +82,14 @@ export const AircraftCard = ({ planeInfo }) => {
             </h3>
           </div>
         </div>
+        <div className="aircraft-card__list-item--more">
+          <Link href="/aeronaves/aeronaves-usadas">
+            <>
+              <span>Ver más</span>
+              <ArrowRight />
+            </>
+          </Link>
+        </div>
       </div>
     );
   }
@@ -100,13 +122,14 @@ export const AircraftCard = ({ planeInfo }) => {
       </Swiper>
       <div className="aircraft-card__info">
         <div className="aircraft-card__title">
+          {planeInfo.manufacturer ? <h4>{planeInfo.manufacturer}</h4> : null}
           <h3>
             <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
               {planeInfo.model}
             </Link>
           </h3>
         </div>
-        <ul className="aircraft-card__list">{renderSpecsList()}</ul>
+        {renderSpecsList()}
       </div>
     </div>
   );
