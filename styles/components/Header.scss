@@ -32,7 +32,9 @@
         }
       }
       .fa-envelope {
-        color: $white;
+        @media (min-width: $mobile-breakpoint) {
+          color: $white;
+        }
       }
     }
     .header__link-list-submenu {
