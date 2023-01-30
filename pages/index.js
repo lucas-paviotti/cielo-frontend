@@ -14,7 +14,7 @@ export default function Home({ aeronaves }) {
         <title>Cielo S.A.</title>
         <meta
           name="description"
-          content="Único centro de servicio autorizado de Cirrus Aircraft para Argentina, Bolivia, Paraguay y Uruguay."
+          content="Único centro de ventas y servicio autorizado para Argentina, Bolivia, Paraguay, Uruguay y Chile."
         />
         <meta
           name="viewport"

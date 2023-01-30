@@ -6,6 +6,9 @@
   bottom: 0;
   z-index: 1;
   svg {
+    &:first-of-type {
+      position: relative;
+    }
     width: 100%;
     height: auto;
     position: absolute;

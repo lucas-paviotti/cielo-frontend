@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { HeroBanner } from "../components/HeroBanner";
 
 export default function sobreNosotros() {
   return (
@@ -7,7 +8,7 @@ export default function sobreNosotros() {
         <title>Cielo S.A. - Sobre Nosotros</title>
         <meta
           name="description"
-          content="Único centro de servicio autorizado de Cirrus Aircraft para Argentina, Bolivia, Paraguay y Uruguay."
+          content="Único centro de ventas y servicio autorizado para Argentina, Bolivia, Paraguay, Uruguay y Chile."
         />
         <meta
           name="viewport"
@@ -15,7 +16,13 @@ export default function sobreNosotros() {
           key="viewport"
         />
       </Head>
-      <div className="container"></div>
+      <HeroBanner
+        title="Mantenimiento y venta de aeronaves en San Fernando"
+        image="/images/banner/sobre-nosotros.jpg"
+      />
+      <div className="wrapper">
+        <div className="container"></div>
+      </div>
     </>
   );
 }
