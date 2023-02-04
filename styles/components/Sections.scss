@@ -1,0 +1,23 @@
+.historia {
+  margin-bottom: 12rem;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    @media (min-width: $mobile-breakpoint) {
+      flex-direction: row;
+    }
+  }
+}
+
+.representantes {
+  position: relative;
+  height: 840px;
+  margin-bottom: 12rem;
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}

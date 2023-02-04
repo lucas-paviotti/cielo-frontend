@@ -1,5 +1,8 @@
 import Head from "next/head";
 import { HeroBanner } from "../components/HeroBanner";
+import Historia from "../components/Sections/SobreNosotros/Historia";
+import Representantes from "../components/Sections/SobreNosotros/Representantes";
+import TresGeneraciones from "../components/Sections/SobreNosotros/TresGeneraciones";
 
 export default function sobreNosotros() {
   return (
@@ -21,7 +24,13 @@ export default function sobreNosotros() {
         image="/images/banner/sobre-nosotros.jpg"
       />
       <div className="wrapper">
-        <div className="container"></div>
+        <div className="container">
+          <Historia />
+        </div>
+        <Representantes />
+        <div className="container">
+          <TresGeneraciones />
+        </div>
       </div>
     </>
   );

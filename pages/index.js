@@ -23,7 +23,7 @@ export default function Home({ aeronaves }) {
         />
       </Head>
       <Hero />
-      <div className="wrapper">
+      <div className="wrapper" style={{ paddingTop: 0 }}>
         <GridMenuContainer />
         <CallToAction />
         <div className="container">

@@ -9,8 +9,7 @@ export const HeroBanner = ({ title, image }) => {
           src={image}
           alt=""
           fill
-          objectFit="cover"
-          objectPosition="center top"
+          style={{ objectFit: "cover", objectPosition: "center top" }}
         />
       </div>
       <h1>{title}</h1>
