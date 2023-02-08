@@ -29,7 +29,7 @@ const Representantes = () => {
           href="https://cirrusaircraft.com/"
           target="_blank"
           rel="noreferrer"
-          className="btn-primary-light shadow-none"
+          className="btn-dark shadow-none"
         >
           <span>Ir al sitio</span>
           <ArrowRight

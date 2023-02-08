@@ -35,7 +35,7 @@ export const GridMenuContainer = () => {
             obtenido alcances para realizar trabajos de una amplia gama de
             aviones, desde monomotores hasta modernos Jets ejecutivos.
           </p>
-          <Link href="/sobre-nosotros" className="btn-primary">
+          <Link href="/sobre-nosotros" className="btn-primary shadow-none">
             <span>Seguir leyendo</span>
             <ArrowRight
               width="0.85rem"

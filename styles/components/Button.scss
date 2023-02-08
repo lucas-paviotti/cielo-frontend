@@ -60,16 +60,16 @@
   &-dark {
     @extend .btn;
     color: $white;
-    background-color: $dark-blue;
+    background-color: $light-blue;
     &:hover {
       transform: scale(1.05);
-      background-color: $dark;
+      background-color: $dark-blue;
       transition: all 0.3s ease-in-out;
       -webkit-font-smoothing: subpixel-antialiased;
     }
     &:active,
     &:focus {
-      background-color: $dark;
+      background-color: $dark-blue;
     }
   }
   &.shadow-none {
