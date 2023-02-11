@@ -7,9 +7,10 @@ module.exports = {
     REACT_APP_EMAILJS_TEMPLATE_ID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
     REACT_APP_EMAILJS_PUBLIC_KEY: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
     REACT_APP_STRAPI_URL: process.env.REACT_APP_STRAPI_URL,
+    REACT_APP_GOOGLE_MAPS_KEY: process.env.REACT_APP_GOOGLE_MAPS_KEY,
   },
   images: {
     loader: "default",
-    domains: ['localhost'],
+    domains: ["localhost"],
   },
-}
+};

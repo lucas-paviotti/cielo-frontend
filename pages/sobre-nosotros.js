@@ -3,6 +3,7 @@ import { HeroBanner } from "../components/HeroBanner";
 import Historia from "../components/Sections/SobreNosotros/Historia";
 import Representantes from "../components/Sections/SobreNosotros/Representantes";
 import TresGeneraciones from "../components/Sections/SobreNosotros/TresGeneraciones";
+import Contactanos from "../components/Sections/Contactanos";
 
 export default function sobreNosotros() {
   return (
@@ -30,6 +31,7 @@ export default function sobreNosotros() {
         <Representantes />
         <div className="container">
           <TresGeneraciones />
+          <Contactanos />
         </div>
       </div>
     </>
