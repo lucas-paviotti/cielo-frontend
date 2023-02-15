@@ -1,7 +1,7 @@
 import Waves from "./Waves/Waves";
 import Image from "next/image";
 
-export const HeroBanner = ({ title, image }) => {
+export const HeroBanner = ({ title, image, position, wave }) => {
   return (
     <section className="hero-banner">
       <div className="hero-banner-bg">
@@ -9,11 +9,11 @@ export const HeroBanner = ({ title, image }) => {
           src={image}
           alt=""
           fill
-          style={{ objectFit: "cover", objectPosition: "center top" }}
+          style={{ objectFit: "cover", objectPosition: position || "center" }}
         />
       </div>
       <h1>{title}</h1>
-      <Waves wave="SobreNosotros" />
+      <Waves wave={wave} />
     </section>
   );
 };

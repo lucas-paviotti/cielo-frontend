@@ -209,3 +209,26 @@
     }
   }
 }
+
+.habilitaciones-vigentes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 2.25rem;
+  }
+  .main-text {
+    margin-bottom: 3rem;
+    @media (min-width: $mobile-breakpoint) {
+      margin-bottom: 4rem;
+    }
+  }
+  .btn-primary {
+    white-space: nowrap;
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+}

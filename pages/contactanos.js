@@ -1,15 +1,12 @@
 import Head from "next/head";
 import { HeroBanner } from "../components/HeroBanner";
-import Historia from "../components/Sections/SobreNosotros/Historia";
-import Representantes from "../components/Sections/SobreNosotros/Representantes";
-import TresGeneraciones from "../components/Sections/SobreNosotros/TresGeneraciones";
 import Contactanos from "../components/Sections/Contactanos";
 
-export default function sobreNosotros() {
+export default function contactanos() {
   return (
     <>
       <Head>
-        <title>Cielo S.A. - Sobre Nosotros</title>
+        <title>Cielo S.A. - Contactanos</title>
         <meta
           name="description"
           content="Único centro de ventas y servicio autorizado para Argentina, Bolivia, Paraguay, Uruguay y Chile."
@@ -21,18 +18,12 @@ export default function sobreNosotros() {
         />
       </Head>
       <HeroBanner
-        title="Mantenimiento y venta de aeronaves en San Fernando"
-        image="/images/banner/sobre-nosotros.jpg"
-        position="center top"
-        wave="SobreNosotros"
+        title="Contactanos"
+        image="/images/gallery/IMG_0526-min.jpeg"
+        wave="Contactanos"
       />
       <div className="wrapper">
         <div className="container">
-          <Historia />
-        </div>
-        <Representantes />
-        <div className="container">
-          <TresGeneraciones />
           <Contactanos />
         </div>
       </div>
