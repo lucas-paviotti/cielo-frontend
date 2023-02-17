@@ -24,7 +24,7 @@ export default function contactanos() {
       />
       <div className="wrapper">
         <div className="container">
-          <Contactanos />
+          <Contactanos title={false} />
         </div>
       </div>
     </>

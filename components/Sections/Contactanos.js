@@ -5,12 +5,12 @@ import { Phone } from "../Icons/Phone";
 import { Envelope } from "../Icons/Envelope";
 import useModal from "../../hooks/useModal";
 
-const Contactanos = () => {
+const Contactanos = ({ title }) => {
   const toggleModal = useModal((state) => state.toggleModal);
 
   return (
     <div className="contactanos">
-      <TitleWithLine title="Contactanos" center />
+      {title ? <TitleWithLine title="Contactanos" center /> : null}
       <Map />
       <div className="contactanos__content">
         <div className="contactanos__item">

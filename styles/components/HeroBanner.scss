@@ -3,13 +3,13 @@
   margin-top: 3.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   color: $white;
   position: relative;
   @media (min-width: $mobile-breakpoint) {
     height: 31.25rem;
-    padding-top: 3rem;
   }
   &::before {
     content: "";
@@ -43,15 +43,12 @@
     max-width: 56rem;
     font-size: clamp(2rem, 4vw, 4rem);
     line-height: 1.25em;
-    margin: auto;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-    padding: 2.75rem 2rem 1.5rem;
+    margin: 0;
+    padding: 4rem 2rem 5.5rem;
     z-index: 1;
     @media (min-width: $mobile-breakpoint) {
-      padding: 0;
+      padding: 2.75rem 2rem 10rem;
     }
-  }
-  .wave-container {
-    position: relative;
   }
 }

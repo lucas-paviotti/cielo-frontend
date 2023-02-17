@@ -33,7 +33,7 @@ export default function sobreNosotros() {
         <Representantes />
         <div className="container">
           <TresGeneraciones />
-          <Contactanos />
+          <Contactanos title={true} />
         </div>
       </div>
     </>
