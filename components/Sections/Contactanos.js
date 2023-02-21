@@ -40,9 +40,9 @@ const Contactanos = ({ title }) => {
           </div>
           <p className="main-text">
             Contactanos a través de nuestro{" "}
-            <span onClick={() => toggleModal("contact")}>
+            <button className="btn-none" onClick={() => toggleModal("contact")}>
               <b>formulario</b>
-            </span>{" "}
+            </button>{" "}
             o escribiendo a{" "}
             <a href="mailto:secretaría@cielosa.com.ar">
               <b>secretaría@cielosa.com.ar</b>

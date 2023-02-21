@@ -28,17 +28,14 @@ export default function Home({ aeronaves }) {
         <CallToAction />
         <div className="container">
           <TitleWithLine title="Aeronaves a la venta" />
-          <AircraftGridContainer>
-            {aeronaves
-              .sort(
-                (a, b) =>
-                  Number(b.attributes.featured) - Number(a.attributes.featured)
-              )
-              .map((plane) => (
+          {aeronaves && aeronaves.length ? (
+            <AircraftGridContainer>
+              {aeronaves.map((plane) => (
                 <AircraftCard key={plane.id} planeInfo={plane.attributes} />
               ))}
-            <AircraftCard />
-          </AircraftGridContainer>
+              <AircraftCard />
+            </AircraftGridContainer>
+          ) : null}
         </div>
       </div>
     </>
@@ -47,9 +44,15 @@ export default function Home({ aeronaves }) {
 
 export async function getServerSideProps() {
   const aeronavesRes = await fetchAPI("/aeronaves", {
+    sort: ["featured:desc", "id:asc"],
+    filters: {
+      frontpage: {
+        $eq: true,
+      },
+    },
     populate: {
       specs: "*",
-      images: "*",
+      media: "*",
     },
   });
 

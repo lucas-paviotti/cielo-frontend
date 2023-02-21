@@ -1,11 +1,11 @@
-.aircraft-card {
+.used-aircraft-card {
   border-radius: 15px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin-bottom: 1.875rem;
   &.featured {
     grid-column: 1/-1;
-    .aircraft-card__slider {
+    .used-aircraft-card__slider {
       .swiper-slide {
         height: 300px;
       }
@@ -104,7 +104,7 @@
         letter-spacing: -0.031rem;
       }
       &--more {
-        @extend .aircraft-card__list-item;
+        @extend .used-aircraft-card__list-item;
         min-height: 3.75rem;
         display: flex;
         align-items: center;

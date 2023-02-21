@@ -1,8 +1,14 @@
 import Head from "next/head";
 import { HeroBanner } from "../components/HeroBanner";
-import Contactanos from "../components/Sections/Contactanos";
+import { UsedAircraftCard } from "../components/UsedAircraftCard";
+import { UsedAircraftGridContainer } from "../components/UsedAircraftGridContainer";
+import { TitleWithLine } from "../components/TitleWithLine";
+import { fetchAPI } from "../data/api";
+import useModal from "../hooks/useModal";
 
-export default function contactanos() {
+export default function AeronavesUsadas({ aeronaves }) {
+  const toggleModal = useModal((state) => state.toggleModal);
+
   return (
     <>
       <Head>
@@ -24,8 +30,57 @@ export default function contactanos() {
         wave="AeronavesUsadas"
       />
       <div className="wrapper">
-        <div className="container"></div>
+        <div className="container">
+          {aeronaves && aeronaves.length ? (
+            <UsedAircraftGridContainer>
+              {aeronaves.map((plane) => (
+                <UsedAircraftCard key={plane.id} planeInfo={plane.attributes} />
+              ))}
+            </UsedAircraftGridContainer>
+          ) : (
+            <>
+              <TitleWithLine
+                title="En este momento no disponemos de aeronaves usadas a la venta."
+                center
+              />
+              <p className="main-text center">
+                Vuelva a intentar mas tarde o{" "}
+                <button
+                  className="btn-none"
+                  onClick={() => toggleModal("contact")}
+                >
+                  <b>contáctenos</b>
+                </button>
+              </p>
+            </>
+          )}
+        </div>
       </div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const aeronavesRes = await fetchAPI("/aeronaves", {
+    sort: ["featured:desc", "manufacturer", "model"],
+    filters: {
+      used: {
+        $eq: true,
+      },
+    },
+    populate: {
+      specs: "*",
+      media: "*",
+    },
+    pagination: {
+      pageSize: 9,
+      page: 1,
+    },
+  });
+
+  return {
+    props: {
+      aeronaves: aeronavesRes.data,
+    },
+  };
 }

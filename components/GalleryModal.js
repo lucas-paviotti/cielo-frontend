@@ -1,13 +1,15 @@
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Modal } from "./Modal";
 import { getStrapiMedia } from "../data/api";
 import { Close } from "./Icons/Close";
 import useModal from "../hooks/useModal";
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export const GalleryModal = () => {
-  const { isOpen, toggleModal, currentImage } = useModal((state) => ({
+  const { isOpen, toggleModal, currentMedia } = useModal((state) => ({
     isOpen: state.modals.gallery.isOpen,
-    currentImage: state.modals.gallery.data,
+    currentMedia: state.modals.gallery.data,
     toggleModal: state.toggleModal,
   }));
 
@@ -24,21 +26,29 @@ export const GalleryModal = () => {
         </button>
       </div>
       <div className="modal__body">
-        {currentImage ? (
-          typeof currentImage === "string" ? (
+        {currentMedia ? (
+          typeof currentMedia === "string" ? (
             <Image
-              src={currentImage}
+              src={currentMedia}
               alt=""
               width={2016}
               height={1512}
               className="modal__gallery-image"
             />
+          ) : currentMedia.attributes.ext === ".mp4" ||
+            currentMedia.attributes.ext === ".mov" ? (
+            <ReactPlayer
+              url={getStrapiMedia(currentMedia)}
+              width="100%"
+              height="100%"
+              controls={true}
+            />
           ) : (
             <Image
-              src={getStrapiMedia(currentImage)}
-              alt={currentImage.attributes.alternativeText}
-              width={currentImage.attributes.width}
-              height={currentImage.attributes.height}
+              src={getStrapiMedia(currentMedia)}
+              alt={currentMedia.attributes.alternativeText || ""}
+              width={currentMedia.attributes.width}
+              height={currentMedia.attributes.height}
               className="modal__gallery-image"
             />
           )

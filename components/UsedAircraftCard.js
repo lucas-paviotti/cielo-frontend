@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
-export const AircraftCard = ({ planeInfo }) => {
+export const UsedAircraftCard = ({ planeInfo }) => {
   const { toggleModal, setData } = useModal((state) => ({
     toggleModal: state.toggleModal,
     setData: state.setData,
@@ -22,17 +22,17 @@ export const AircraftCard = ({ planeInfo }) => {
     if (planeInfo.featured == true) {
       return (
         <>
-          <ul className="aircraft-card__list">
+          <ul className="used-aircraft-card__list">
             {planeInfo.specs.slice(0, 5).map((item) => {
               return (
-                <li className="aircraft-card__list-item" key={item.id}>
+                <li className="used-aircraft-card__list-item" key={item.id}>
                   <span>{item.value}</span>
                   <span>{item.label}</span>
                 </li>
               );
             })}
           </ul>
-          <div className="aircraft-card__list-item--more">
+          <div className="used-aircraft-card__list-item--more">
             <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
               <>
                 <span>Ver más</span>
@@ -44,7 +44,7 @@ export const AircraftCard = ({ planeInfo }) => {
       );
     } else {
       return (
-        <div className="aircraft-card__list-item--more">
+        <div className="used-aircraft-card__list-item--more">
           <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
             <>
               <span>Ver más</span>
@@ -56,54 +56,14 @@ export const AircraftCard = ({ planeInfo }) => {
     }
   };
 
-  if (!planeInfo) {
-    return (
-      <div className="aircraft-card">
-        <Swiper
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          className="aircraft-card__slider"
-        >
-          <SwiperSlide key="aeronaves-usadas">
-            <Image
-              src="/images/IMG_9715.jpg"
-              alt="Aeronaves usadas"
-              fill={true}
-              sizes="100vw, (min-width: 992px) 465px, (min-width: 1280px) 555px"
-              style={{ objectFit: "cover" }}
-              priority={false}
-              onClick={() => {
-                setData("gallery", "/images/IMG_9715.jpg");
-                toggleModal("gallery");
-              }}
-            />
-          </SwiperSlide>
-        </Swiper>
-        <div className="aircraft-card__info">
-          <div className="aircraft-card__title">
-            <h3>
-              <Link href="/aeronaves-usadas">Aeronaves Usadas</Link>
-            </h3>
-          </div>
-        </div>
-        <div className="aircraft-card__list-item--more">
-          <Link href="/aeronaves/aeronaves-usadas">
-            <>
-              <span>Ver más</span>
-              <ArrowRight />
-            </>
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className={`aircraft-card ${planeInfo.featured ? "featured" : ""}`}>
+    <div
+      className={`used-aircraft-card ${planeInfo.featured ? "featured" : ""}`}
+    >
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}
-        className="aircraft-card__slider"
+        className="used-aircraft-card__slider"
       >
         {planeInfo.media.data?.map((item) => {
           return (
@@ -133,8 +93,8 @@ export const AircraftCard = ({ planeInfo }) => {
                     item,
                     planeInfo.featured || !item.attributes.formats
                       ? null
-                      : item.attributes.formats.medium
-                      ? "medium"
+                      : item.attributes.formats.small
+                      ? "small"
                       : item.attributes.formats[0]
                   )}
                   alt=""
@@ -152,8 +112,8 @@ export const AircraftCard = ({ planeInfo }) => {
           );
         })}
       </Swiper>
-      <div className="aircraft-card__info">
-        <div className="aircraft-card__title">
+      <div className="used-aircraft-card__info">
+        <div className="used-aircraft-card__title">
           {planeInfo.manufacturer ? <h4>{planeInfo.manufacturer}</h4> : null}
           <h3>
             <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>

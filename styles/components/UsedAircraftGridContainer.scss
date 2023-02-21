@@ -1,0 +1,9 @@
+.used-aircraft-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  @media (min-width: $mobile-breakpoint) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+  }
+}
