@@ -10,6 +10,7 @@ import { ArrowRight } from "./Icons/ArrowRight";
 import useModal from "../hooks/useModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import { formatValueToUsd } from "../utils/formatValue";
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export const UsedAircraftCard = ({ planeInfo }) => {
@@ -17,44 +18,6 @@ export const UsedAircraftCard = ({ planeInfo }) => {
     toggleModal: state.toggleModal,
     setData: state.setData,
   }));
-
-  const renderSpecsList = () => {
-    if (planeInfo.featured == true) {
-      return (
-        <>
-          <ul className="used-aircraft-card__list">
-            {planeInfo.specs.slice(0, 5).map((item) => {
-              return (
-                <li className="used-aircraft-card__list-item" key={item.id}>
-                  <span>{item.value}</span>
-                  <span>{item.label}</span>
-                </li>
-              );
-            })}
-          </ul>
-          <div className="used-aircraft-card__list-item--more">
-            <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
-              <>
-                <span>Ver más</span>
-                <ArrowRight />
-              </>
-            </Link>
-          </div>
-        </>
-      );
-    } else {
-      return (
-        <div className="used-aircraft-card__list-item--more">
-          <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
-            <>
-              <span>Ver más</span>
-              <ArrowRight />
-            </>
-          </Link>
-        </div>
-      );
-    }
-  };
 
   return (
     <div
@@ -114,14 +77,42 @@ export const UsedAircraftCard = ({ planeInfo }) => {
       </Swiper>
       <div className="used-aircraft-card__info">
         <div className="used-aircraft-card__title">
-          {planeInfo.manufacturer ? <h4>{planeInfo.manufacturer}</h4> : null}
+          <h4>
+            {planeInfo.manufacturer ? (
+              <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+                {planeInfo.manufacturer}
+              </Link>
+            ) : null}
+          </h4>
           <h3>
             <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
               {planeInfo.model}
             </Link>
           </h3>
         </div>
-        {renderSpecsList()}
+        <div className="used-aircraft-card__details">
+          {planeInfo.year ? <span>{planeInfo.year}</span> : null}
+          {planeInfo.registration ? (
+            <span>{planeInfo.registration}</span>
+          ) : null}
+          {planeInfo.serial ? <span>{planeInfo.serial}</span> : null}
+        </div>
+        <div className="used-aircraft-card__price">
+          {planeInfo.price ? (
+            <>
+              <span>{planeInfo.currency}</span>{" "}
+              <span>{formatValueToUsd(planeInfo.price)}</span>
+            </>
+          ) : null}
+        </div>
+        <div className="used-aircraft-card__more">
+          <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+            <>
+              <span>Ver más</span>
+              <ArrowRight />
+            </>
+          </Link>
+        </div>
       </div>
     </div>
   );
