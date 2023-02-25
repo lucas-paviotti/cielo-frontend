@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Image from "next/image";
 import { GlobalContext } from "../context/GlobalContext";
 import Link from "next/link";
+import { AircraftLink } from "./AircraftLink";
 
 export const Footer = ({ subLinks }) => {
   const { SocialLinks } = useContext(GlobalContext);
@@ -48,16 +49,19 @@ export const Footer = ({ subLinks }) => {
             <span className="footer__link-list-header">
               Aeronaves a la venta
             </span>
-            {/* <ul className="footer__link-list">
-              {subLinks.map((item) => {
-                <li className="footer__link-list-item">
-                  <Link href={`/aeronaves/{}`}>Cirrus SR22T</Link>
-                </li>;
-              })}
+            <ul className="footer__link-list">
+              {subLinks?.map((item) => (
+                <li key={item.id} className="footer__link-list-item">
+                  <AircraftLink item={item}>
+                    {item.attributes.manufacturer.replace(" Aircraft", " ") +
+                      item.attributes.model}
+                  </AircraftLink>
+                </li>
+              ))}
               <li className="footer__link-list-item">
                 <Link href="/aeronaves-usadas">Aeronaves usadas</Link>
               </li>
-            </ul> */}
+            </ul>
           </div>
           {SocialLinks && (
             <div className="footer__link-list-container">

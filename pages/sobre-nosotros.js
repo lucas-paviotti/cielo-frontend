@@ -9,7 +9,7 @@ export default function sobreNosotros() {
   return (
     <>
       <Head>
-        <title>Cielo S.A. - Sobre Nosotros</title>
+        <title>Sobre Nosotros | Cielo S.A.</title>
         <meta
           name="description"
           content="Único centro de ventas y servicio autorizado para Argentina, Bolivia, Paraguay, Uruguay y Chile."

@@ -31,10 +31,6 @@ export const Layout = ({ children }) => {
     fetchLinks();
   }, []);
 
-  useEffect(() => {
-    console.log(links);
-  }, [links]);
-
   return (
     <GlobalProvider>
       <ParallaxProvider>

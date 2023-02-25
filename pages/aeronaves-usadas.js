@@ -12,7 +12,7 @@ export default function AeronavesUsadas({ aeronaves }) {
   return (
     <>
       <Head>
-        <title>Cielo S.A. - Aeronaves Usadas</title>
+        <title>Aeronaves Usadas | Cielo S.A.</title>
         <meta
           name="description"
           content="Único centro de ventas y servicio autorizado para Argentina, Bolivia, Paraguay, Uruguay y Chile."
@@ -34,7 +34,7 @@ export default function AeronavesUsadas({ aeronaves }) {
           {aeronaves && aeronaves.length ? (
             <UsedAircraftGridContainer>
               {aeronaves.map((plane) => (
-                <UsedAircraftCard key={plane.id} planeInfo={plane.attributes} />
+                <UsedAircraftCard key={plane.id} planeInfo={plane} />
               ))}
             </UsedAircraftGridContainer>
           ) : (

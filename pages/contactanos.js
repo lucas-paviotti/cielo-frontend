@@ -6,7 +6,7 @@ export default function contactanos() {
   return (
     <>
       <Head>
-        <title>Cielo S.A. - Contactanos</title>
+        <title>Contactanos | Cielo S.A.</title>
         <meta
           name="description"
           content="Único centro de ventas y servicio autorizado para Argentina, Bolivia, Paraguay, Uruguay y Chile."

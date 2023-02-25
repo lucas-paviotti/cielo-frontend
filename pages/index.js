@@ -31,7 +31,7 @@ export default function Home({ aeronaves }) {
           {aeronaves && aeronaves.length ? (
             <AircraftGridContainer>
               {aeronaves.map((plane) => (
-                <AircraftCard key={plane.id} planeInfo={plane.attributes} />
+                <AircraftCard key={plane.id} planeInfo={plane} />
               ))}
               <AircraftCard />
             </AircraftGridContainer>

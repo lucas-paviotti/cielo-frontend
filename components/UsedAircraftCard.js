@@ -5,13 +5,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { getStrapiMedia } from "../data/api";
-import Link from "next/link";
 import { ArrowRight } from "./Icons/ArrowRight";
 import useModal from "../hooks/useModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { formatValueToUsd } from "../utils/formatValue";
-import { getAircraftLink } from "../utils/getAircraftLink";
+import { AircraftLink } from "./AircraftLink";
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export const UsedAircraftCard = ({ planeInfo }) => {
@@ -22,14 +21,16 @@ export const UsedAircraftCard = ({ planeInfo }) => {
 
   return (
     <div
-      className={`used-aircraft-card ${planeInfo.featured ? "featured" : ""}`}
+      className={`used-aircraft-card ${
+        planeInfo.attributes.featured ? "featured" : ""
+      }`}
     >
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}
         className="used-aircraft-card__slider"
       >
-        {planeInfo.media.data?.map((item) => {
+        {planeInfo.attributes.media.data?.map((item) => {
           return (
             <SwiperSlide key={item.id}>
               {item.attributes.ext === ".mp4" ||
@@ -55,7 +56,7 @@ export const UsedAircraftCard = ({ planeInfo }) => {
                 <Image
                   src={getStrapiMedia(
                     item,
-                    planeInfo.featured || !item.attributes.formats
+                    planeInfo.attributes.featured || !item.attributes.formats
                       ? null
                       : item.attributes.formats.small
                       ? "small"
@@ -65,7 +66,7 @@ export const UsedAircraftCard = ({ planeInfo }) => {
                   fill={true}
                   sizes="100vw, (min-width: 992px) 465px, (min-width: 1280px) 555px"
                   style={{ objectFit: "cover" }}
-                  priority={planeInfo.featured ? true : false}
+                  priority={planeInfo.attributes.featured ? true : false}
                   onClick={() => {
                     setData("gallery", item);
                     toggleModal("gallery");
@@ -79,63 +80,46 @@ export const UsedAircraftCard = ({ planeInfo }) => {
       <div className="used-aircraft-card__info">
         <div className="used-aircraft-card__title">
           <h4>
-            {planeInfo.manufacturer ? (
-              <Link
-                href="/aeronaves/[id]"
-                as={`/aeronaves/${getAircraftLink(
-                  planeInfo.manufacturer,
-                  planeInfo.model,
-                  planeInfo.registration
-                )}`}
-              >
-                {planeInfo.manufacturer}
-              </Link>
+            {planeInfo.attributes.manufacturer ? (
+              <AircraftLink item={planeInfo}>
+                {planeInfo.attributes.manufacturer}
+              </AircraftLink>
             ) : null}
           </h4>
           <h3>
-            <Link
-              href="/aeronaves/[id]"
-              as={`/aeronaves/${getAircraftLink(
-                planeInfo.manufacturer,
-                planeInfo.model,
-                planeInfo.registration
-              )}`}
-            >
-              {planeInfo.model}
-            </Link>
+            <AircraftLink item={planeInfo}>
+              {planeInfo.attributes.model}
+            </AircraftLink>
           </h3>
         </div>
         <div className="used-aircraft-card__details">
-          {planeInfo.year ? <span>{planeInfo.year}</span> : null}
-          {planeInfo.registration ? (
-            <span>{planeInfo.registration}</span>
+          {planeInfo.attributes.year ? (
+            <span>{planeInfo.attributes.year}</span>
           ) : null}
-          {planeInfo.serial ? <span>{planeInfo.serial}</span> : null}
+          {planeInfo.attributes.registration ? (
+            <span>{planeInfo.attributes.registration}</span>
+          ) : null}
+          {planeInfo.attributes.serial ? (
+            <span>{planeInfo.attributes.serial}</span>
+          ) : null}
         </div>
         <div className="used-aircraft-card__price">
-          {planeInfo.price ? (
+          {planeInfo.attributes.price ? (
             <>
-              <span>{planeInfo.currency}</span>{" "}
-              <span>{formatValueToUsd(planeInfo.price)}</span>
+              <span>{planeInfo.attributes.currency}</span>{" "}
+              <span>{formatValueToUsd(planeInfo.attributes.price)}</span>
             </>
           ) : (
             <span>A consultar</span>
           )}
         </div>
         <div className="used-aircraft-card__more">
-          <Link
-            href="/aeronaves/[id]"
-            as={`/aeronaves/${getAircraftLink(
-              planeInfo.manufacturer,
-              planeInfo.model,
-              planeInfo.registration
-            )}`}
-          >
+          <AircraftLink item={planeInfo}>
             <>
               <span>Ver más</span>
               <ArrowRight />
             </>
-          </Link>
+          </AircraftLink>
         </div>
       </div>
     </div>

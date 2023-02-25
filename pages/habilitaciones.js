@@ -7,7 +7,7 @@ export default function habilitaciones({ habilitaciones }) {
   return (
     <>
       <Head>
-        <title>Cielo S.A. - Habilitaciones</title>
+        <title>Habilitaciones | Cielo S.A.</title>
         <meta
           name="description"
           content="Único centro de ventas y servicio autorizado para Argentina, Bolivia, Paraguay, Uruguay y Chile."

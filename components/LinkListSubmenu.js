@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { AircraftLink } from "./AircraftLink";
 
 export const LinkListSubmenu = ({ name, items }) => {
   const [submenu, setSubmenu] = useState(false);
@@ -19,15 +20,13 @@ export const LinkListSubmenu = ({ name, items }) => {
         <ul
           className={`header__link-list-submenu ${submenu ? "open" : "closed"}`}
         >
-          {items?.map((item, index) => {
+          {items?.map((item) => {
             return (
               <li className="header__link-list-subitem" key={item.id}>
-                <Link
-                  href={`/aeronaves/${item.id}`}
-                  as={`/aeronaves/${item.attributes.model}`}
-                >
-                  {item.attributes.model}
-                </Link>
+                <AircraftLink item={item}>
+                  {item.attributes.manufacturer.replace(" Aircraft", " ") +
+                    item.attributes.model}
+                </AircraftLink>
               </li>
             );
           })}
