@@ -114,12 +114,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.95rem;
+      font-size: 1.25rem;
       padding: 0.5rem 1rem;
       cursor: pointer;
       transition: color 0.3s;
       &:hover {
         color: $secondary;
+      }
+      @media (min-width: $mobile-breakpoint) {
+        font-size: 0.95rem;
       }
     }
     @media (min-width: $mobile-breakpoint) {
@@ -136,7 +139,7 @@
     align-items: center;
     flex-wrap: nowrap;
     a {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       padding: 0 1rem;
       display: flex;
       align-items: center;
@@ -147,7 +150,7 @@
         }
       }
       &.facebook {
-        font-size: 1.125rem;
+        font-size: 1.325rem;
         @media (min-width: $mobile-breakpoint) {
           font-size: 1rem;
         }
@@ -163,7 +166,7 @@
     .fa-envelope {
       transition: color 0.3s;
       cursor: pointer;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       margin: 0 1rem;
       &:hover {
         color: $secondary;
@@ -252,6 +255,24 @@
       margin-top: 1rem;
       white-space: nowrap;
       box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+  &__link-list-subitem {
+    a {
+      font-size: 1rem;
+      @media (min-width: $mobile-breakpoint) {
+        font-size: 0.95rem;
+      }
+    }
+  }
+  &__link-list-subitem:first-of-type {
+    a {
+      padding-top: 1rem;
+    }
+  }
+  &__link-list-subitem:last-of-type {
+    a {
+      padding-bottom: 1rem;
     }
   }
 }

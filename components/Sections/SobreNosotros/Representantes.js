@@ -21,8 +21,9 @@ const Representantes = () => {
           <p className="main-text">
             Somos representantes oficiales de la empresa lider de ventas en el
             mercado aeronautico, <b>Cirrus Aircraft</b>, desde el año{" "}
-            <b>2011</b> y el <b>Único centro de ventas y servicio autorizado</b>{" "}
-            para Argentina, Bolivia, Paraguay, Uruguay y Chile.
+            <b>2011</b> y a su vez el{" "}
+            <b>único centro de ventas y servicio autorizado</b> para{" "}
+            <b>Argentina, Bolivia, Paraguay, Uruguay y Chile</b>.
           </p>
         </div>
         <a
@@ -31,7 +32,7 @@ const Representantes = () => {
           rel="noreferrer"
           className="btn-dark shadow-none"
         >
-          <span>Ir al sitio</span>
+          <span>Cirrus Aircraft</span>
           <ArrowRight
             width="0.85rem"
             height="0.75rem"

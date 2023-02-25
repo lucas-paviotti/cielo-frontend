@@ -3,8 +3,8 @@ import Image from "next/image";
 import { GlobalContext } from "../context/GlobalContext";
 import Link from "next/link";
 
-export const Footer = () => {
-  const { FooterLinks, SocialLinks } = useContext(GlobalContext);
+export const Footer = ({ subLinks }) => {
+  const { SocialLinks } = useContext(GlobalContext);
 
   return (
     <footer className="footer">
@@ -48,25 +48,16 @@ export const Footer = () => {
             <span className="footer__link-list-header">
               Aeronaves a la venta
             </span>
-            <ul className="footer__link-list">
-              <li className="footer__link-list-item">
-                <Link href="/aeronaves/cirrus-sr22t">Cirrus SR22T</Link>
-              </li>
-              <li className="footer__link-list-item">
-                <Link href="/aeronaves/cirrus-vision-jet">
-                  Cirrus Vision Jet
-                </Link>
-              </li>
-              <li className="footer__link-list-item">
-                <Link href="/aeronaves/cirrus-sr22">Cirrus SR22</Link>
-              </li>
-              <li className="footer__link-list-item">
-                <Link href="/aeronaves/cirrus-sr20">Cirrus SR20</Link>
-              </li>
+            {/* <ul className="footer__link-list">
+              {subLinks.map((item) => {
+                <li className="footer__link-list-item">
+                  <Link href={`/aeronaves/{}`}>Cirrus SR22T</Link>
+                </li>;
+              })}
               <li className="footer__link-list-item">
                 <Link href="/aeronaves-usadas">Aeronaves usadas</Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
           {SocialLinks && (
             <div className="footer__link-list-container">

@@ -10,10 +10,10 @@ import { LinkListSubmenu } from "./LinkListSubmenu";
 import { LogoIcon } from "./Icons/LogoIcon";
 import useModal from "../hooks/useModal";
 
-export const Header = () => {
+export const Header = ({ subLinks }) => {
   const [transparent, setTransparent] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { HeaderLinks, SocialLinks } = useContext(GlobalContext);
+  const { SocialLinks } = useContext(GlobalContext);
   const { screenType } = useResponsive();
   const { route } = useRouter();
   const toggleModal = useModal((state) => state.toggleModal);
@@ -61,22 +61,22 @@ export const Header = () => {
         </div>
         <nav className={`header__nav ${menuOpen ? "isMenu" : ""}`}>
           <ul className="header__link-list">
-            {HeaderLinks.map((headerLink, index) => {
-              if (headerLink.links.length > 1) {
-                return <LinkListSubmenu key={index} items={headerLink} />;
-              } else {
-                return (
-                  <li className="header__link-list-item" key={index}>
-                    <Link
-                      href={headerLink.links[0].to}
-                      onClick={menuToggleHandler}
-                    >
-                      {headerLink.links[0].title}
-                    </Link>
-                  </li>
-                );
-              }
-            })}
+            <li className="header__link-list-item">
+              <Link href="/sobre-nosotros" onClick={menuToggleHandler}>
+                Sobre Nosotros
+              </Link>
+            </li>
+            <LinkListSubmenu name="Aeronaves" items={subLinks} />
+            <li className="header__link-list-item">
+              <Link href="/habilitaciones" onClick={menuToggleHandler}>
+                Habilitaciones
+              </Link>
+            </li>
+            <li className="header__link-list-item">
+              <Link href="/contactanos" onClick={menuToggleHandler}>
+                Contactanos
+              </Link>
+            </li>
           </ul>
           {SocialLinks && (
             <div className="header__socials">

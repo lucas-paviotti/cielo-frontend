@@ -45,7 +45,7 @@
     z-index: 1;
     padding: 4rem 2rem;
     @media (min-width: $mobile-breakpoint) {
-      padding: 12rem 0 18rem 0;
+      padding: 12rem 0 14rem 0;
       display: block;
     }
     .title-container {
@@ -115,12 +115,12 @@
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
-    margin-top: 0rem;
+    margin-top: 0;
     margin-bottom: 1rem;
     width: 90%;
     @media (min-width: $mobile-breakpoint) {
       margin-top: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 0;
       width: 32.75rem;
       height: 20.375rem;
     }

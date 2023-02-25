@@ -19,6 +19,8 @@ const HabilitacionesVigentes = ({ habilitaciones }) => {
         href={process.env.REACT_APP_STRAPI_URL + habilitaciones.attributes.url}
         className="btn-primary"
         download
+        target="_blank"
+        rel="noreferrer"
       >
         <span>Descargar planilla de habilitaciones</span>
         <ArrowRight

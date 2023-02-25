@@ -11,6 +11,7 @@ import useModal from "../hooks/useModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { formatValueToUsd } from "../utils/formatValue";
+import { getAircraftLink } from "../utils/getAircraftLink";
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export const UsedAircraftCard = ({ planeInfo }) => {
@@ -79,13 +80,27 @@ export const UsedAircraftCard = ({ planeInfo }) => {
         <div className="used-aircraft-card__title">
           <h4>
             {planeInfo.manufacturer ? (
-              <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+              <Link
+                href="/aeronaves/[id]"
+                as={`/aeronaves/${getAircraftLink(
+                  planeInfo.manufacturer,
+                  planeInfo.model,
+                  planeInfo.registration
+                )}`}
+              >
                 {planeInfo.manufacturer}
               </Link>
             ) : null}
           </h4>
           <h3>
-            <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+            <Link
+              href="/aeronaves/[id]"
+              as={`/aeronaves/${getAircraftLink(
+                planeInfo.manufacturer,
+                planeInfo.model,
+                planeInfo.registration
+              )}`}
+            >
               {planeInfo.model}
             </Link>
           </h3>
@@ -103,10 +118,19 @@ export const UsedAircraftCard = ({ planeInfo }) => {
               <span>{planeInfo.currency}</span>{" "}
               <span>{formatValueToUsd(planeInfo.price)}</span>
             </>
-          ) : null}
+          ) : (
+            <span>A consultar</span>
+          )}
         </div>
         <div className="used-aircraft-card__more">
-          <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+          <Link
+            href="/aeronaves/[id]"
+            as={`/aeronaves/${getAircraftLink(
+              planeInfo.manufacturer,
+              planeInfo.model,
+              planeInfo.registration
+            )}`}
+          >
             <>
               <span>Ver más</span>
               <ArrowRight />

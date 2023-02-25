@@ -15,20 +15,23 @@ const Historia = () => {
         />
         <div className="main-text__container">
           <p className="main-text">
-            <b>Cielo S.A.</b> es una empresa Argentina dedicada al mantenimiento
-            y venta de aeronaves ubicada en el Aeropuerto Internacional de San
-            Fernando.
+            <b>Cielo S.A.</b> es una empresa argentina dedicada a la venta y
+            mantenimiento de aeronaves, ubicada en el{" "}
+            <b>Aeropuerto Internacional de San Fernando.</b>
           </p>
           <p className="main-text">
-            Contamos con trés generaciones de experiencia al servicio del
-            cliente. Iniciando las actividades aeronauticas con Atilio Paviotti
-            en 1921, sucedido por su hijo Bruno Paviotti en la decada del 50 y
-            hace más de 30 años con Marcelo Paviotti.
+            Fundada en 1921 por <b>Atilio Paviotti</b>, pionero de la industria
+            aeronáutica en Argentina, liderada luego por su hijo{" "}
+            <b>Bruno Paviotti</b> en la década del 50 y, actualmente, por{" "}
+            <b>Marcelo Paviotti</b>, continuando con el legado y la tradición
+            familiar de tres generaciones de experiencia al servicio del
+            cliente.
           </p>
           <p className="main-text">
-            Con más de <b>40 años</b> en la industria, <b>Cielo S.A.</b> es el
-            resultado del esfuerzo y la dedicación de trés líderes en el mercado
-            aeronautico.
+            Ofrecemos soluciones personalizadas y un servicio de calidad para
+            garantizar la satisfacción de nuestros clientes, siempre
+            comprometidos con la innovación y la excelencia en el mercado
+            aeronáutico.
           </p>
         </div>
       </div>

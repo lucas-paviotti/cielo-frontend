@@ -28,7 +28,7 @@ const TresGeneraciones = () => {
           />
         </div>
         <p className="main-text">
-          A su vez contamos con un gran equipo de profesionales certificados,
+          Al mismo tiempo contamos con un gran equipo de profesionales certificados,
           constantemente asegurándonos de superar las expectativas y brindar el
           mejor servicio posible que usted merece como cliente.
         </p>

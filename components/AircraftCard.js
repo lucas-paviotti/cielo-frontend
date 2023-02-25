@@ -10,6 +10,7 @@ import { ArrowRight } from "./Icons/ArrowRight";
 import useModal from "../hooks/useModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import { getAircraftLink } from "../utils/getAircraftLink";
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export const AircraftCard = ({ planeInfo }) => {
@@ -33,7 +34,14 @@ export const AircraftCard = ({ planeInfo }) => {
             })}
           </ul>
           <div className="aircraft-card__list-item--more">
-            <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+            <Link
+              href="/aeronaves/[id]"
+              as={`/aeronaves/${getAircraftLink(
+                planeInfo.manufacturer,
+                planeInfo.model,
+                planeInfo.registration
+              )}`}
+            >
               <>
                 <span>Ver más</span>
                 <ArrowRight />
@@ -45,7 +53,14 @@ export const AircraftCard = ({ planeInfo }) => {
     } else {
       return (
         <div className="aircraft-card__list-item--more">
-          <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+          <Link
+            href="/aeronaves/[id]"
+            as={`/aeronaves/${getAircraftLink(
+              planeInfo.manufacturer,
+              planeInfo.model,
+              planeInfo.registration
+            )}`}
+          >
             <>
               <span>Ver más</span>
               <ArrowRight />
@@ -156,7 +171,14 @@ export const AircraftCard = ({ planeInfo }) => {
         <div className="aircraft-card__title">
           {planeInfo.manufacturer ? <h4>{planeInfo.manufacturer}</h4> : null}
           <h3>
-            <Link href="/aeronaves/[id]" as={`/aeronaves/${planeInfo.model}`}>
+            <Link
+              href="/aeronaves/[id]"
+              as={`/aeronaves/${getAircraftLink(
+                planeInfo.manufacturer,
+                planeInfo.model,
+                planeInfo.registration
+              )}`}
+            >
               {planeInfo.model}
             </Link>
           </h3>
