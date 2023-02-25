@@ -4,8 +4,8 @@ import { GlobalContext } from "../context/GlobalContext";
 import Link from "next/link";
 import { AircraftLink } from "./AircraftLink";
 
-export const Footer = ({ subLinks }) => {
-  const { SocialLinks } = useContext(GlobalContext);
+export const Footer = () => {
+  const { socialLinks, aircraftLinks } = useContext(GlobalContext);
 
   return (
     <footer className="footer">
@@ -50,7 +50,7 @@ export const Footer = ({ subLinks }) => {
               Aeronaves a la venta
             </span>
             <ul className="footer__link-list">
-              {subLinks?.map((item) => (
+              {aircraftLinks?.map((item) => (
                 <li key={item.id} className="footer__link-list-item">
                   <AircraftLink item={item}>
                     {item.attributes.manufacturer.replace(" Aircraft", " ") +
@@ -63,14 +63,14 @@ export const Footer = ({ subLinks }) => {
               </li>
             </ul>
           </div>
-          {SocialLinks && (
+          {socialLinks && (
             <div className="footer__link-list-container">
               <span className="footer__link-list-header">Contacto y redes</span>
               <ul className="footer__link-list">
-                {SocialLinks.instagram && (
+                {socialLinks.instagram && (
                   <li className="footer__link-list-item">
                     <a
-                      href={SocialLinks.instagram}
+                      href={socialLinks.instagram}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -78,10 +78,10 @@ export const Footer = ({ subLinks }) => {
                     </a>
                   </li>
                 )}
-                {SocialLinks.facebook && (
+                {socialLinks.facebook && (
                   <li className="footer__link-list-item">
                     <a
-                      href={SocialLinks.facebook}
+                      href={socialLinks.facebook}
                       target="_blank"
                       rel="noreferrer"
                     >

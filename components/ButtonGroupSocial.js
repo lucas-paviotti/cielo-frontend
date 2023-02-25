@@ -5,7 +5,7 @@ import { GlobalContext } from "../context/GlobalContext";
 import useModal from "../hooks/useModal";
 
 export const ButtonGroupSocial = () => {
-  const { SocialLinks } = useContext(GlobalContext);
+  const { socialLinks } = useContext(GlobalContext);
   const toggleModal = useModal((state) => state.toggleModal);
 
   return (
@@ -13,9 +13,9 @@ export const ButtonGroupSocial = () => {
       <button className="btn-primary" onClick={() => toggleModal("contact")}>
         Contactanos
       </button>
-      {SocialLinks.facebook && (
+      {socialLinks.facebook && (
         <a
-          href={SocialLinks.facebook}
+          href={socialLinks.facebook}
           target="_blank"
           className="btn-primary_social facebook"
           rel="noreferrer"
@@ -23,9 +23,9 @@ export const ButtonGroupSocial = () => {
           <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
         </a>
       )}
-      {SocialLinks.instagram && (
+      {socialLinks.instagram && (
         <a
-          href={SocialLinks.instagram}
+          href={socialLinks.instagram}
           target="_blank"
           className="btn-primary_social instagram"
           rel="noreferrer"

@@ -7,8 +7,8 @@ export default function PlanePage({ aeronave }) {
       <Head>
         <title>
           {aeronave.attributes.manufacturer.replace(" Aircraft", " ") +
-            aeronave.attributes.model}{" "}
-          | Cielo S.A.
+            aeronave.attributes.model +
+            " | Cielo S.A."}
         </title>
         <meta name="description" content={aeronave.attributes.description} />
         <meta
@@ -23,7 +23,7 @@ export default function PlanePage({ aeronave }) {
 }
 
 export async function getServerSideProps({ query }) {
-  const aeronaveRes = await fetchAPI(`/aeronaves/${query.id}`, {
+  const aeronaveRes = await fetchAPI(`/aeronaves/${query.id[0]}`, {
     populate: {
       specs: "*",
       media: "*",

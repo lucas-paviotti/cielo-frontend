@@ -10,10 +10,10 @@ import { LinkListSubmenu } from "./LinkListSubmenu";
 import { LogoIcon } from "./Icons/LogoIcon";
 import useModal from "../hooks/useModal";
 
-export const Header = ({ subLinks }) => {
+export const Header = () => {
   const [transparent, setTransparent] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { SocialLinks } = useContext(GlobalContext);
+  const { socialLinks, aircraftLinks } = useContext(GlobalContext);
   const { screenType } = useResponsive();
   const { route } = useRouter();
   const toggleModal = useModal((state) => state.toggleModal);
@@ -66,7 +66,7 @@ export const Header = ({ subLinks }) => {
                 Sobre Nosotros
               </Link>
             </li>
-            <LinkListSubmenu name="Aeronaves" items={subLinks} />
+            <LinkListSubmenu name="Aeronaves" items={aircraftLinks} />
             <li className="header__link-list-item">
               <Link href="/habilitaciones" onClick={menuToggleHandler}>
                 Habilitaciones
@@ -78,11 +78,11 @@ export const Header = ({ subLinks }) => {
               </Link>
             </li>
           </ul>
-          {SocialLinks && (
+          {socialLinks && (
             <div className="header__socials">
-              {SocialLinks.instagram && (
+              {socialLinks.instagram && (
                 <a
-                  href={SocialLinks.instagram}
+                  href={socialLinks.instagram}
                   target="_blank"
                   rel="noreferrer"
                   className="instagram"
@@ -90,9 +90,9 @@ export const Header = ({ subLinks }) => {
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               )}
-              {SocialLinks.facebook && (
+              {socialLinks.facebook && (
                 <a
-                  href={SocialLinks.facebook}
+                  href={socialLinks.facebook}
                   target="_blank"
                   rel="noreferrer"
                   className="facebook"

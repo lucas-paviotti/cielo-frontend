@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { ArrowRight } from "./Icons/ArrowRight";
 
 export const GridMenuContainer = () => {
-  const { SocialLinks } = useContext(GlobalContext);
+  const { socialLinks } = useContext(GlobalContext);
   const toggleModal = useModal((state) => state.toggleModal);
   const { screenType } = useResponsive();
   const { ref } = useParallax({
@@ -45,11 +45,11 @@ export const GridMenuContainer = () => {
             />
           </Link>
         </GridMenuItem>
-        {SocialLinks.instagram ? (
+        {socialLinks.instagram ? (
           <GridMenuItem
             background="/images/grid/49f47f08-9fc2-4c27-8dc8-cb8f0e4a0b21-min.jpg"
             className="grid-col-span-2"
-            url={SocialLinks.instagram}
+            url={socialLinks.instagram}
             target="_blank"
           >
             <div className="text-link">
