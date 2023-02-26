@@ -60,7 +60,7 @@ export const UsedAircraftCard = ({ planeInfo }) => {
                       ? null
                       : item.attributes.formats.small
                       ? "small"
-                      : item.attributes.formats[0]
+                      : "thumbnail"
                   )}
                   alt=""
                   fill={true}

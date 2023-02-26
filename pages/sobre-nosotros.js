@@ -4,8 +4,9 @@ import Historia from "../components/Sections/SobreNosotros/Historia";
 import Representantes from "../components/Sections/SobreNosotros/Representantes";
 import TresGeneraciones from "../components/Sections/SobreNosotros/TresGeneraciones";
 import Contactanos from "../components/Sections/Contactanos";
+import { fetchAPI } from "../data/api";
 
-export default function sobreNosotros() {
+export default function sobreNosotros({ data }) {
   return (
     <>
       <Head>
@@ -28,7 +29,7 @@ export default function sobreNosotros() {
       />
       <div className="wrapper">
         <div className="container">
-          <Historia />
+          <Historia media={data.media.data} />
         </div>
         <Representantes />
         <div className="container">
@@ -38,4 +39,18 @@ export default function sobreNosotros() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetchAPI(`/sobre-nosotros-page`, {
+    populate: {
+      media: "*",
+    },
+  });
+
+  return {
+    props: {
+      data: res.data.attributes,
+    },
+  };
 }

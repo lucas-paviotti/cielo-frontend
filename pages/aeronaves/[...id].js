@@ -1,7 +1,9 @@
 import Head from "next/head";
 import { fetchAPI } from "../../data/api";
+import { Gallery } from "../../components/Gallery";
 
 export default function PlanePage({ aeronave }) {
+  console.log(aeronave.attributes.media.data);
   return (
     <>
       <Head>
@@ -17,7 +19,11 @@ export default function PlanePage({ aeronave }) {
           key="viewport"
         />
       </Head>
-      <div></div>
+      <div className="wrapper">
+        <div className="container">
+          <Gallery media={aeronave.attributes.media.data} />
+        </div>
+      </div>
     </>
   );
 }

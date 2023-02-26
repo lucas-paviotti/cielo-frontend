@@ -13,6 +13,16 @@
       flex-direction: row;
     }
   }
+  .gallery {
+    aspect-ratio: 4/3;
+    @media (min-width: $mobile-breakpoint) {
+      width: 30.625rem;
+    }
+    @media (min-width: $laptop-breakpoint) {
+      width: 40.625rem;
+      height: 23.125rem;
+    }
+  }
 }
 
 .representantes {

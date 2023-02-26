@@ -1,18 +1,12 @@
 import { TitleWithLine } from "../../TitleWithLine";
 import { Gallery } from "../../Gallery";
 
-const Historia = () => {
+const Historia = ({ media }) => {
   return (
     <div className="historia">
       <TitleWithLine title="Nuestra historia" center />
       <div className="historia__container">
-        <Gallery
-          images={[
-            "/images/gallery/IMG_0526-min.jpeg",
-            "/images/gallery/IMG_0088-min.jpeg",
-            "/images/gallery/IMG_4697-min.jpeg",
-          ]}
-        />
+        <Gallery media={media} />
         <div className="main-text__container">
           <p className="main-text">
             <b>Cielo S.A.</b> es una empresa argentina dedicada a la venta y

@@ -25,7 +25,7 @@ export default function habilitaciones({ habilitaciones }) {
       />
       <div className="wrapper">
         <div className="container">
-          <HabilitacionesVigentes habilitaciones={habilitaciones} />
+          <HabilitacionesVigentes habilitaciones={habilitaciones.file.data} />
         </div>
       </div>
     </>
@@ -41,7 +41,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      habilitaciones: res.data.attributes.file.data,
+      habilitaciones: res.data.attributes,
     },
   };
 }

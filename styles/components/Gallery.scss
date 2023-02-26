@@ -5,28 +5,38 @@
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 4/3;
-  @media (min-width: $mobile-breakpoint) {
-    width: 30.625rem;
-  }
-  @media (min-width: $laptop-breakpoint) {
-    width: 40.625rem;
-    height: 23.125rem;
-  }
+  aspect-ratio: 16/9;
   &__slider {
     height: 100%;
     .swiper-slide {
       cursor: pointer;
+      &:hover {
+        .thumbnail-icon {
+          transform: translate(-50%, -50%) scale(1.04);
+          opacity: 1;
+          transition: all 0.1s ease-in-out;
+        }
+      }
+      .thumbnail-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4rem;
+        opacity: 0.9;
+        transition: all 0.1s ease-in-out;
+        pointer-events: none;
+      }
     }
-    .swiper-pagination {
-      .swiper-pagination-bullet {
-        background: $white;
-        opacity: 0.5;
-      }
-      .swiper-pagination-bullet-active {
-        background: $primary;
-        opacity: 1;
-      }
+  }
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      background: $white;
+      opacity: 0.5;
+    }
+    .swiper-pagination-bullet-active {
+      background: $primary;
+      opacity: 1;
     }
   }
   &__wrapper {

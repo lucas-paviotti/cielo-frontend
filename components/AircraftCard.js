@@ -100,7 +100,11 @@ export const AircraftCard = ({ planeInfo }) => {
   }
 
   return (
-    <div className={`aircraft-card ${planeInfo.attributes.featured ? "featured" : ""}`}>
+    <div
+      className={`aircraft-card ${
+        planeInfo.attributes.featured ? "featured" : ""
+      }`}
+    >
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}
@@ -136,7 +140,7 @@ export const AircraftCard = ({ planeInfo }) => {
                       ? null
                       : item.attributes.formats.medium
                       ? "medium"
-                      : item.attributes.formats[0]
+                      : "small"
                   )}
                   alt=""
                   fill={true}
@@ -155,9 +159,13 @@ export const AircraftCard = ({ planeInfo }) => {
       </Swiper>
       <div className="aircraft-card__info">
         <div className="aircraft-card__title">
-          {planeInfo.attributes.manufacturer ? <h4>{planeInfo.attributes.manufacturer}</h4> : null}
+          {planeInfo.attributes.manufacturer ? (
+            <h4>{planeInfo.attributes.manufacturer}</h4>
+          ) : null}
           <h3>
-            <AircraftLink item={planeInfo}>{planeInfo.attributes.model}</AircraftLink>
+            <AircraftLink item={planeInfo}>
+              {planeInfo.attributes.model}
+            </AircraftLink>
           </h3>
         </div>
         {renderSpecsList()}
