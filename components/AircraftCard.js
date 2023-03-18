@@ -7,10 +7,11 @@ import { Pagination } from "swiper";
 import { getStrapiMedia } from "../data/api";
 import Link from "next/link";
 import { ArrowRight } from "./Icons/ArrowRight";
-import useModal from "../hooks/useModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { AircraftLink } from "./AircraftLink";
+import { RemainingUnits } from "./RemainingUnits";
+import useModal from "../hooks/useModal";
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export const AircraftCard = ({ planeInfo }) => {
@@ -159,6 +160,7 @@ export const AircraftCard = ({ planeInfo }) => {
       </Swiper>
       <div className="aircraft-card__info">
         <div className="aircraft-card__title">
+          <RemainingUnits aircraft={planeInfo.attributes} />
           {planeInfo.attributes.manufacturer ? (
             <h4>{planeInfo.attributes.manufacturer}</h4>
           ) : null}

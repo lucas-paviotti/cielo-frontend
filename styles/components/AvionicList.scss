@@ -1,0 +1,32 @@
+.avionics {
+  margin-bottom: 2.5rem;
+  &__title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    @media (min-width: $mobile-breakpoint) {
+      text-align: left;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5rem;
+    row-gap: 0.5rem;
+    &-item {
+      display: flex;
+      align-items: center;
+      font-weight: 300;
+      column-gap: 0.6rem;
+      &:before {
+        content: "";
+        border-radius: 100%;
+        background-color: $light-blue;
+        width: 0.25rem;
+        height: 0.25rem;
+        display: inline-block;
+      }
+    }
+  }
+}

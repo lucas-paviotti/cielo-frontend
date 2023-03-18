@@ -5,10 +5,15 @@ import { Textarea } from "./Input/Textarea";
 import { useState } from "react";
 import { ErrorMessage } from "./Input/ErrorMessage";
 import { SuccessMessage } from "./Input/SuccessMessage";
+import useModal from "../../hooks/useModal";
 
 export const ContactForm = () => {
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState(null);
+
+  const { data } = useModal((state) => ({
+    data: state.modals.contact.data,
+  }));
 
   return (
     <Formik
@@ -16,7 +21,7 @@ export const ContactForm = () => {
         name: "",
         phone: "",
         email: "",
-        message: "",
+        message: data || "",
       }}
       validationSchema={Yup.object({
         name: Yup.string()

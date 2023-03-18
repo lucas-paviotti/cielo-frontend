@@ -31,7 +31,7 @@ export const Gallery = ({ media }) => {
         >
           {media.map((item) => {
             return (
-              <SwiperSlide key={item.attributes.id}>
+              <SwiperSlide key={item.id}>
                 {item.attributes.ext === ".mp4" ||
                 item.attributes.ext === ".mov" ? (
                   <>
@@ -61,6 +61,7 @@ export const Gallery = ({ media }) => {
                         "thumbnail"
                     )}
                     alt=""
+                    sizes="100vw, (min-width: 992px) 576px, (min-width: 1280px) 684px"
                     fill={true}
                     style={{ objectFit: "cover", objectPosition: "center" }}
                     onClick={() => {

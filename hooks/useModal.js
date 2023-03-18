@@ -9,7 +9,11 @@ const useModal = create((set) => ({
     set((prev) => ({
       modals: {
         ...prev.modals,
-        [modal]: { ...prev.modals[modal], isOpen: !prev.modals[modal].isOpen },
+        [modal]: {
+          isOpen: !prev.modals[modal].isOpen,
+          data:
+            prev.modals[modal].isOpen === true ? null : prev.modals[modal].data,
+        },
       },
     })),
   setData: (modal, newData) =>
