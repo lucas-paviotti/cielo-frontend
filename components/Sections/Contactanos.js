@@ -18,7 +18,7 @@ const Contactanos = ({ title }) => {
             <MapPin />
           </div>
           <p className="main-text">
-            Av. Hipólito Yrigoyen 4502, San Fernando, Provincia de Buenos Aires
+            Ruta 202 y Balcarce, San Fernando, Provincia de Buenos Aires
           </p>
           <p className="main-text">
             (Aeropuerto Internacional de San Fernando)
@@ -44,8 +44,12 @@ const Contactanos = ({ title }) => {
               <b>formulario</b>
             </button>{" "}
             o escribiendo a{" "}
-            <a href="mailto:secretaría@cielosa.com.ar">
-              <b>secretaría@cielosa.com.ar</b>
+            <a href="mailto:secretaria@cielosa.com.ar">
+              <b>secretaria@cielosa.com.ar</b>
+            </a>{" "}
+            o{" "}
+            <a href="mailto:administracion@cielosa.com.ar">
+              <b>administracion@cielosa.com.ar</b>
             </a>
           </p>
         </div>

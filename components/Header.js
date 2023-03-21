@@ -86,6 +86,7 @@ export const Header = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="instagram"
+                  aria-label="Instagram de Cielo"
                 >
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
@@ -96,6 +97,7 @@ export const Header = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="facebook"
+                  aria-label="Facebook de Cielo"
                 >
                   <FontAwesomeIcon icon={faFacebookF} />
                 </a>

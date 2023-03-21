@@ -19,6 +19,7 @@ export const ButtonGroupSocial = () => {
           target="_blank"
           className="btn-primary_social facebook"
           rel="noreferrer"
+          aria-label="Facebook de Cielo"
         >
           <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
         </a>
@@ -29,6 +30,7 @@ export const ButtonGroupSocial = () => {
           target="_blank"
           className="btn-primary_social instagram"
           rel="noreferrer"
+          aria-label="Instagram de Cielo"
         >
           <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
         </a>

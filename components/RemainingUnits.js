@@ -33,10 +33,10 @@ export const RemainingUnits = ({ aircraft, text }) => {
               <button
                 className="btn-none"
                 onClick={() => {
-                  setData(
-                    "contact",
-                    `Hola, estoy interesado en obtener más información sobre el ${aircraft.model} de ${aircraft.manufacturer}. ¿Podrían contactarme para discutir detalles adicionales? Gracias.`
-                  );
+                  setData("contact", {
+                    message: `Hola, estoy interesado en obtener más información sobre el ${aircraft.model} de ${aircraft.manufacturer}. ¿Podrían contactarme para discutir detalles adicionales? Gracias.`,
+                    model: aircraft.model,
+                  });
                   toggleModal("contact");
                 }}
               >

@@ -24,6 +24,7 @@
   &__submit {
     box-shadow: none;
     align-self: flex-end;
+    min-width: 4.813rem;
   }
   &__error {
     display: flex;
@@ -37,8 +38,9 @@
   &__success {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.3rem;
+    padding: 1rem 0.3rem;
     .svg-inline--fa {
       font-size: 1.1rem;
     }

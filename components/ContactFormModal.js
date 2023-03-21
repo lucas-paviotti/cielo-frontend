@@ -22,7 +22,7 @@ export const ContactFormModal = () => {
         </button>
       </div>
       <div className="modal__body">
-        <ContactForm />
+        <ContactForm isOpen={isOpen} />
       </div>
     </Modal>
   );

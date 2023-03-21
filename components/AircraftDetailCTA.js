@@ -28,7 +28,11 @@ export const AircraftDetailCTA = ({ aircraft }) => {
       <button
         className="btn-primary aircraft-detail-cta__button"
         onClick={() => {
-          setData("contact", message);
+          setData("contact", {
+            message: message,
+            model: aircraft.model,
+            registration: aircraft.registration,
+          });
           toggleModal("contact");
         }}
       >
