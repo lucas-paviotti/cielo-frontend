@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { GlobalContext } from "../context/GlobalContext";
-import useResponsive from "../Hooks/useResponsive";
+import useResponsive from "../hooks/useResponsive";
 import { LinkListSubmenu } from "./LinkListSubmenu";
 import { LogoIcon } from "./Icons/LogoIcon";
 import useModal from "../hooks/useModal";

@@ -10,7 +10,7 @@ import AvionicList from "../../components/AvionicList";
 import EquipmentList from "../../components/EquipmentList";
 import RemarksList from "../../components/RemarksList";
 import Faq from "../../components/Faq";
-import useResponsive from "../../Hooks/useResponsive";
+import useResponsive from "../../hooks/useResponsive";
 
 export default function PlanePage({ aeronave }) {
   const { screenType } = useResponsive();

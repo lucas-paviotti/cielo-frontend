@@ -3,7 +3,7 @@ import { GridMenuItem } from "./GridMenuItem";
 import { GlobalContext } from "../context/GlobalContext";
 import useModal from "../hooks/useModal";
 import { useParallax } from "react-scroll-parallax";
-import useResponsive from "../Hooks/useResponsive";
+import useResponsive from "../hooks/useResponsive";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ArrowRight } from "./Icons/ArrowRight";
