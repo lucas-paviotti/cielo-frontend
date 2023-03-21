@@ -10,6 +10,6 @@ module.exports = {
   },
   images: {
     loader: "default",
-    domains: ["localhost"],
+    domains: ["localhost", "res.cloudinary.com"],
   },
 };

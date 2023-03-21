@@ -17,6 +17,8 @@ export const Gallery = ({ media }) => {
     setData: state.setData,
   }));
 
+  if (!media) return null;
+
   return (
     <div className="gallery__wrapper">
       <div className="gallery">
