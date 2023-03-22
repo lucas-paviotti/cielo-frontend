@@ -28,7 +28,7 @@ async function sendEmail(req, res) {
   try {
     const mailRes = await mg.messages.create("noreply.cielosa.com.ar", {
       from: `${name} <notify@noreply.cielosa.com.ar>`,
-      to: ["paviottilucas@gmail.com"],
+      to: ["administracion@cielosa.com.ar", "marcelopaviotti@cielosa.com.ar"],
       subject: subject,
       template: "consulta",
       "h:X-Mailgun-Variables": JSON.stringify({
