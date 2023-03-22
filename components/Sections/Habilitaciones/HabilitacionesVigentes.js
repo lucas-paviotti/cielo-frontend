@@ -16,7 +16,7 @@ const HabilitacionesVigentes = ({ habilitaciones }) => {
         talleres aeronáuticos.
       </p>
       <a
-        href={process.env.REACT_APP_STRAPI_URL + habilitaciones.attributes.url}
+        href={habilitaciones.attributes.url}
         className="btn-primary"
         download
         target="_blank"
