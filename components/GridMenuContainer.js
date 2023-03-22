@@ -24,7 +24,7 @@ export const GridMenuContainer = () => {
     <div className="container grid-menu-container">
       <div className="grid-menu" ref={ref}>
         <GridMenuItem
-          background="/images/grid/IMG_3418-min.jpg"
+          background="/images/grid/IMG_3418-min.JPG"
           className="grid-col-span-2 text-align-left"
         >
           <h2>Más de 40 años al servicio del cliente</h2>
@@ -47,7 +47,7 @@ export const GridMenuContainer = () => {
         </GridMenuItem>
         {socialLinks.instagram ? (
           <GridMenuItem
-            background="/images/grid/49f47f08-9fc2-4c27-8dc8-cb8f0e4a0b21-min.jpg"
+            background="/images/grid/49f47f08-9fc2-4c27-8dc8-cb8f0e4a0b21-min.JPG"
             className="grid-col-span-2"
             url={socialLinks.instagram}
             target="_blank"
@@ -72,7 +72,7 @@ export const GridMenuContainer = () => {
           <h2 className="text-link">Contactanos</h2>
         </GridMenuItem>
         <GridMenuItem
-          background="/images/grid/IMG_2690-min.jpg"
+          background="/images/grid/IMG_2690-min.JPG"
           className="grid-col-span-2"
           url="/habilitaciones"
         >
