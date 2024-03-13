@@ -14,7 +14,9 @@ export const AircraftDetailCTA = ({ aircraft }) => {
 
   return (
     <div className="aircraft-detail-cta">
-      {aircraft.units ? <RemainingUnits aircraft={aircraft} /> : null}
+      {aircraft.units && !aircraft.used ? (
+        <RemainingUnits aircraft={aircraft} />
+      ) : null}
       <div className="aircraft-detail-cta__price">
         {aircraft.price ? (
           <>
