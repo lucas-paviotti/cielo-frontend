@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper/modules";
 import useModal from "../hooks/useModal";
 import { Blob1, Blob2, Blob3 } from "./Blob";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

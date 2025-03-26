@@ -4,7 +4,7 @@ import { Modal } from "./Modal";
 import { getStrapiMedia } from "../data/api";
 import { Close } from "./Icons/Close";
 import useModal from "../hooks/useModal";
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 export const GalleryModal = () => {
   const { isOpen, toggleModal, currentMedia } = useModal((state) => ({
@@ -34,6 +34,7 @@ export const GalleryModal = () => {
               width={2016}
               height={1512}
               className="modal__gallery-image"
+              loading="eager"
             />
           ) : currentMedia.attributes.ext === ".mp4" ||
             currentMedia.attributes.ext === ".mov" ? (
@@ -50,6 +51,7 @@ export const GalleryModal = () => {
               width={currentMedia.attributes.width}
               height={currentMedia.attributes.height}
               className="modal__gallery-image"
+              loading="eager"
             />
           )
         ) : null}

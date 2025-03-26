@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+/** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
   env: {
@@ -10,6 +11,17 @@ module.exports = {
   },
   images: {
     loader: "default",
-    domains: ["localhost", "res.cloudinary.com"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "**",
+      },
+    ],
   },
 };
