@@ -9,8 +9,8 @@ export const Hero = () => {
         <div className="container">
           <h1>Mantenimiento y venta de aeronaves</h1>
           <p>
-            Único centro de servicio autorizado de <b>Cirrus Aircraft</b> para
-            Argentina, Bolivia, Paraguay y Uruguay
+            Único centro de ventas y servicio autorizado de <b>Cirrus</b> para
+            Argentina, Chile, Paraguay y Uruguay
           </p>
           <ButtonGroupSocial />
         </div>

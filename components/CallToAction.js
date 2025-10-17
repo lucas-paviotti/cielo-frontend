@@ -9,11 +9,11 @@ export const CallToAction = () => {
     <section className="call-to-action">
       <div className="call-to-action-bg" ref={ref} />
       <div className="container">
-        <h2>Cirrus Aircraft</h2>
+        <h2>Cirrus</h2>
         <p>
-          Somos el único centro de servicio autorizado para Argentina, Bolivia,
-          Paraguay y Uruguay. A su vez ofrecemos asesoramiento a la hora de
-          adquirir su aeronave Cirrus.
+          Somos el único centro de ventas y servicio autorizado para Argentina,
+          Chile, Paraguay y Uruguay. A su vez ofrecemos asesoramiento a la hora
+          de adquirir su aeronave Cirrus.
         </p>
         <p>
           Si desea obtener mas información sobre la marca y sus aeronaves,

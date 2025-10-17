@@ -37,7 +37,7 @@ export const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Cirrus Aircraft
+                  Cirrus
                 </a>
               </li>
               <li className="footer__link-list-item">

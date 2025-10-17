@@ -54,7 +54,7 @@ export const GridMenuContainer = () => {
           >
             <div className="text-link">
               <h3>Seguinos en nuestro Instagram</h3>
-              <h2>Cirrus Aircraft Argentina</h2>
+              <h2>Cirrus Argentina</h2>
             </div>
           </GridMenuItem>
         ) : null}
