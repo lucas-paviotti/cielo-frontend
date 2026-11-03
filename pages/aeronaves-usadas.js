@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Meta } from "../components/Meta";
 import { HeroBanner } from "../components/HeroBanner";
 import { UsedAircraftCard } from "../components/UsedAircraftCard";
 import { UsedAircraftGridContainer } from "../components/UsedAircraftGridContainer";
@@ -11,18 +11,7 @@ export default function AeronavesUsadas({ aeronaves }) {
 
   return (
     <>
-      <Head>
-        <title>Aeronaves Usadas | Cielo S.A.</title>
-        <meta
-          name="description"
-          content="Único centro de ventas y servicio autorizado para Argentina, Chile, Paraguay y Uruguay."
-        />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1"
-          key="viewport"
-        />
-      </Head>
+      <Meta title="Aeronaves Usadas | Cielo S.A." />
       <HeroBanner
         title="Aeronaves Usadas"
         image="/images/gallery/IMG_4697-min.jpeg"

@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Meta } from "../components/Meta";
 import { HeroBanner } from "../components/HeroBanner";
 import HabilitacionesVigentes from "../components/Sections/Habilitaciones/HabilitacionesVigentes";
 import { fetchAPI } from "../data/api";
@@ -6,18 +6,7 @@ import { fetchAPI } from "../data/api";
 export default function habilitaciones({ habilitaciones }) {
   return (
     <>
-      <Head>
-        <title>Habilitaciones | Cielo S.A.</title>
-        <meta
-          name="description"
-          content="Único centro de ventas y servicio autorizado para Argentina, Chile, Paraguay y Uruguay."
-        />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1"
-          key="viewport"
-        />
-      </Head>
+      <Meta title="Habilitaciones | Cielo S.A." />
       <HeroBanner
         title="Habilitaciones"
         image="/images/gallery/IMG_0088-min.jpeg"

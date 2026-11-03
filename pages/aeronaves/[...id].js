@@ -1,5 +1,6 @@
-import Head from "next/head";
-import { fetchAPI } from "../../data/api";
+import { Meta } from "../../components/Meta";
+import { fetchAPI, getStrapiShareImage } from "../../data/api";
+import { toPlainText } from "../../utils/toPlainText";
 import { Gallery } from "../../components/Gallery";
 import { AircraftDetailCTA } from "../../components/AircraftDetailCTA";
 import ReactMarkdown from "react-markdown";
@@ -17,20 +18,18 @@ export default function PlanePage({ aeronave }) {
 
   return (
     <>
-      <Head>
-        <title>
-          {aeronave.attributes.manufacturer.replace(" Aircraft", "") +
-            " " +
-            aeronave.attributes.model +
-            " | Cielo S.A."}
-        </title>
-        <meta name="description" content={aeronave.attributes.description} />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1"
-          key="viewport"
-        />
-      </Head>
+      <Meta
+        title={
+          aeronave.attributes.manufacturer.replace(" Aircraft", "") +
+          " " +
+          aeronave.attributes.model +
+          " | Cielo S.A."
+        }
+        description={
+          toPlainText(aeronave.attributes.description) || undefined
+        }
+        image={getStrapiShareImage(aeronave.attributes.media.data)}
+      />
       <div className="wrapper">
         <div className="container">
           <div className="details">
@@ -84,16 +83,26 @@ export default function PlanePage({ aeronave }) {
 }
 
 export async function getServerSideProps({ query }) {
-  const aeronaveRes = await fetchAPI(`/aeronaves/${query.id[0]}`, {
-    populate: {
-      specs: "*",
-      avionics: "*",
-      media: "*",
-      equipment: "*",
-      remarks: "*",
-      question: "*",
-    },
-  });
+  if (!/^\d+$/.test(query.id[0])) return { notFound: true };
+
+  let aeronaveRes;
+  try {
+    aeronaveRes = await fetchAPI(`/aeronaves/${query.id[0]}`, {
+      populate: {
+        specs: "*",
+        avionics: "*",
+        media: "*",
+        equipment: "*",
+        remarks: "*",
+        question: "*",
+      },
+    });
+  } catch (error) {
+    if (error.status === 404) return { notFound: true };
+    throw error;
+  }
+
+  if (!aeronaveRes.data) return { notFound: true };
 
   return {
     props: {

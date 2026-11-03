@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Meta } from "../components/Meta";
 import { Hero } from "../components/Hero";
 import { GridMenuContainer } from "../components/GridMenuContainer";
 import { CallToAction } from "../components/CallToAction";
@@ -10,18 +10,7 @@ import { fetchAPI } from "../data/api";
 export default function Home({ aeronaves }) {
   return (
     <>
-      <Head>
-        <title>Cielo S.A.</title>
-        <meta
-          name="description"
-          content="Único centro de ventas y servicio autorizado para Argentina, Chile, Paraguay y Uruguay."
-        />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1"
-          key="viewport"
-        />
-      </Head>
+      <Meta title="Cielo S.A. | Mantenimiento y venta de aeronaves" />
       <Hero />
       <div className="wrapper" style={{ paddingTop: 0 }}>
         <GridMenuContainer />
