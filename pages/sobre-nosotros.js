@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Meta } from "../components/Meta";
 import { HeroBanner } from "../components/HeroBanner";
 import Historia from "../components/Sections/SobreNosotros/Historia";
 import Representantes from "../components/Sections/SobreNosotros/Representantes";
@@ -9,18 +9,7 @@ import { fetchAPI } from "../data/api";
 export default function sobreNosotros({ data }) {
   return (
     <>
-      <Head>
-        <title>Sobre Nosotros | Cielo S.A.</title>
-        <meta
-          name="description"
-          content="Único centro de ventas y servicio autorizado para Argentina, Chile, Paraguay y Uruguay."
-        />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1"
-          key="viewport"
-        />
-      </Head>
+      <Meta title="Sobre Nosotros | Cielo S.A." />
       <HeroBanner
         title="Mantenimiento y venta de aeronaves en San Fernando"
         image="/images/banner/sobre-nosotros.jpg"

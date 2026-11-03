@@ -95,7 +95,10 @@ export const Footer = () => {
         </div>
       </div>
       <div className="footer__copyright">
-        <span>© 2022 Cielo S.A. - Todos los derechos reservados</span>
+        <span>
+          © {new Date().getFullYear()} Cielo S.A. - Todos los derechos
+          reservados
+        </span>
       </div>
     </footer>
   );

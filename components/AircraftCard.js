@@ -89,7 +89,7 @@ export const AircraftCard = ({ planeInfo }) => {
           </div>
         </div>
         <div className="aircraft-card__list-item--more">
-          <Link href="/aeronaves/aeronaves-usadas">
+          <Link href="/aeronaves-usadas">
             <>
               <span>Ver más</span>
               <ArrowRight />

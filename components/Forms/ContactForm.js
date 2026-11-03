@@ -59,7 +59,7 @@ export const ContactForm = ({ isOpen }) => {
           "Complete el Captcha para poder enviar su consulta"
         ),
       })}
-      onSubmit={async (values, { resetForm }) => {
+      onSubmit={async (values, { resetForm, setFieldValue }) => {
         const res = await fetch("/api/mail", {
           method: "POST",
           headers: {
@@ -72,6 +72,9 @@ export const ContactForm = ({ isOpen }) => {
           const data = await res.json();
           setError(data.error);
           setIsSent(false);
+          // El token del captcha es de un solo uso
+          captchaRef.current.reset();
+          setFieldValue("token", "");
         } else {
           setError(null);
           setIsSent(true);
@@ -114,6 +117,7 @@ export const ContactForm = ({ isOpen }) => {
               sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
               ref={captchaRef}
               onChange={(e) => setFieldValue("token", e)}
+              onExpired={() => setFieldValue("token", "")}
               style={{
                 display: "flex",
                 justifyContent: "center",

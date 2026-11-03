@@ -10,15 +10,6 @@ class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
-          <meta charSet="UTF-8" key="charset" />
-          <meta property="og:title" content="Cielo S.A." />
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:image"
-            content="https://cielosa.com.ar/thumbnail.JPG"
-          />
-          <meta property="og:url" content="https://cielosa.com.ar/" />
-          <meta name="twitter:card" content="summary_large_image" />
           <link
             rel="apple-touch-icon"
             href="/apple-touch-icon.png"
